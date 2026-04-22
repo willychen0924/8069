@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>8069 元太｜匯聚帶 v1</title>
+<title>8069 元太｜匯聚帶 v2</title>
 <style>
 :root{
   --bg:#f0ebe0;
@@ -71,16 +71,17 @@ body{
 .upd-toggle,.scoring-toggle{display:flex;align-items:center;gap:10px;padding:10px 20px;cursor:pointer;-webkit-user-select:none;user-select:none;background:transparent;border:none;width:100%;font:inherit;color:var(--ink);text-align:left}
 .upd-toggle:hover,.scoring-toggle:hover{background:#faf7ee}
 .upd-toggle h3,.scoring-toggle h3{margin:0;font-size:13px;font-weight:800;flex:1;display:flex;align-items:center;gap:8px}
-.upd-toggle h3::before{content:"4/21";font-size:10px;font-weight:800;color:#fff;background:var(--c2);padding:2px 8px;border-radius:4px;letter-spacing:.04em}
+.upd-toggle h3::before{content:"4/22";font-size:10px;font-weight:800;color:#fff;background:var(--c2);padding:2px 8px;border-radius:4px;letter-spacing:.04em}
 .upd-toggle .arr,.scoring-toggle .arr{font-size:14px;color:var(--ink-3);transition:transform .25s}
 .upd.open .upd-toggle .arr,.scoring.open .scoring-toggle .arr{transform:rotate(180deg)}
 .upd-body,.scoring-body{max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(.4,0,.2,1)}
-.upd.open .upd-body{max-height:800px}
-.scoring.open .scoring-body{max-height:500px}
+.upd.open .upd-body{max-height:900px}
+.scoring.open .scoring-body{max-height:800px}
 .upd-list{padding:0 20px 14px;margin:0;list-style:none;columns:2;column-gap:24px}
 .upd-list li{break-inside:avoid;font-size:13px;color:var(--ink-2);line-height:1.55;padding:3px 0 3px 18px;position:relative}
 .upd-list li::before{content:"";position:absolute;left:4px;top:10px;width:5px;height:5px;border-radius:50%;background:var(--c2);opacity:.5}
 .hl{font-weight:800;color:var(--ink);background:linear-gradient(180deg,transparent 60%,#ffe89b 60%);padding:0 2px}
+.hl-red{font-weight:800;color:var(--c1);background:linear-gradient(180deg,transparent 60%,#fdd3d9 60%);padding:0 2px}
 
 .scoring-inner{padding:0 20px 14px;font-size:12.5px;color:var(--ink-2);line-height:1.7}
 .scoring-inner table{width:100%;border-collapse:collapse;margin-top:6px}
@@ -195,27 +196,27 @@ body{
     <div class="hd-id">
       <h1 class="m"><span class="code">8069</span> 元太</h1>
       <span class="pipe">|</span>
-      <h2>匯聚帶分析</h2>
+      <h2>匯聚帶分析 v2</h2>
     </div>
     <div class="hd-price m">
-      <span class="p">154.0</span>
-      <span class="chg">↓ 52.2%<span>自歷史高 322</span></span>
+      <span class="p">159.0</span>
+      <span class="chg">↓ 50.6%<span>自歷史高 322</span></span>
     </div>
   </div>
   <dl class="hd-stats m">
-    <div><dt>基準日</dt><dd>2026/04/21</dd></div>
-    <div><dt>收盤</dt><dd>154.0</dd></div>
+    <div><dt>基準日</dt><dd>2026/04/22</dd></div>
+    <div><dt>收盤</dt><dd>159.0 (+3.25%)</dd></div>
     <div><dt>波段低</dt><dd>136.0</dd></div>
     <div><dt>歷史高</dt><dd>322.0</dd></div>
   </dl>
   <div class="kpis m">
-    <div class="kp"><span class="dot" style="background:var(--c1)"></span><span class="v">195–215</span><span class="n">★★★★ 已失守</span></div>
+    <div class="kp"><span class="dot" style="background:var(--c1)"></span><span class="v">195–215</span><span class="n">★★★★★ 已失守</span></div>
     <div class="kp"><span class="dot" style="background:var(--c2)"></span><span class="v">178–195</span><span class="n">★★★★ 已失守</span></div>
     <div class="kp"><span class="dot" style="background:var(--c3)"></span><span class="v">165–178</span><span class="n">★★★ 已失守</span></div>
-    <div class="kp"><span class="dot" style="background:var(--c4)"></span><span class="v">135–145</span><span class="n">★★★★★ 主滿足</span></div>
-    <div class="kp"><span class="dot" style="background:var(--c5)"></span><span class="v">125–135</span><span class="n">★★★★ 次級支撐</span></div>
-    <div class="kp"><span class="dot" style="background:var(--c6)"></span><span class="v">100–115</span><span class="n">★★ 量薄延伸</span></div>
-    <div class="kp"><span class="dot" style="background:var(--c7)"></span><span class="v">85–100</span><span class="n">★★★ 厚量歷史</span></div>
+    <div class="kp"><span class="dot" style="background:var(--c4)"></span><span class="v">155–165</span><span class="n">★★ 近壓</span></div>
+    <div class="kp"><span class="dot" style="background:var(--c5)"></span><span class="v">135–145</span><span class="n">★★★★★ 主支撐</span></div>
+    <div class="kp"><span class="dot" style="background:var(--c6)"></span><span class="v">125–135</span><span class="n">★★★★ 次級支撐</span></div>
+    <div class="kp"><span class="dot" style="background:var(--c7)"></span><span class="v">85–100</span><span class="n">★★★ 歷史平台</span></div>
     <div class="kp"><span class="dot" style="background:var(--c8)"></span><span class="v">65–85</span><span class="n">★★ 雙頭目標</span></div>
   </div>
 </header>
@@ -223,20 +224,72 @@ body{
 <!-- UPDATE -->
 <section class="upd open" id="upd">
   <button class="upd-toggle" onclick="this.closest('.upd').classList.toggle('open')">
-    <h3>分析重點</h3>
+    <h3>分析重點（v2 更新）</h3>
     <span class="arr">▾</span>
   </button>
   <div class="upd-body">
     <ul class="upd-list">
-      <li>自 <span class="hl">322 歷史高</span>（2024/09/25）下跌至今 <span class="hl">52.2%</span>，波段低 136（2026/03/31），目前反彈到 154。</li>
-      <li>典型<span class="hl">雙頭型態</span>：頭 322（2024/9）＋ 肩 312（2025/3）＋ 頸線 196.5（2025/4 關稅低）。頸線跌破後量測目標 = <span class="hl">71 元</span>（雙頭滿足點）。</li>
-      <li>MA20（146.7）剛<span class="hl">方向上彎</span>，扣抵值 143.5→142.5，未來 1~2 週有機會延續上彎；但 MA60/120/240 均<span class="hl">方向下彎</span>，中長期空頭排列未破。</li>
-      <li>MA60 扣抵 175.5→179.5（持續下彎）、MA120 扣抵 217→212（強力下彎）、MA240 扣抵 238→214（強力下彎）。</li>
-      <li>近一年外資賣超 <span class="hl">-80,893 張</span>（近 30 日 -26,817），持股 37.0%；融資餘額 <span class="hl">9,493 張</span>不高（已去化）。</li>
-      <li>2025 全年 EPS <span class="hl">9.14 元</span>（年增 96%，歷史新高），但 Q4 單季 EPS 0.97 元（季減 73.6%、年減 68.5%）急凍。</li>
-      <li>2025/Q4~2026/Q1 為<span class="hl">客戶去庫存</span>週期 + ESL 安裝淡季，2026/3 月營收 32.50 億（月增 24.8%、年增 1.3%），Q1 累計年增 7.1% — 季節性止血中但動能放緩。</li>
-      <li>2026 年度盈餘分配案已於 3/6 董事會通過，以近 5 年配息率推估配息約 <span class="hl">5.0 元</span>，現價殖利率約 3.2%。</li>
+      <li>4/22 收盤 <span class="hl">159 元（+3.25%，量 10,561 張）</span>，站回 MA20（147.5）上方，外資轉買超 +1,686 張，近 5 日累計買超 +1,422 張，<span class="hl">短線止跌訊號初現</span>。</li>
+      <li><span class="hl-red">借券賣出餘額創近 3 年新高 32,771 張</span>（占流通股本 2.85%），近 6 個月（2025/10 起）暴增 +23,776 張（+264%），與股價下跌 -32.5% 同步發生 — 空方施壓強烈。</li>
+      <li>借券歷史對照：<span class="hl">2022/11 波段低時借券 36,748 張</span>為當時極值，之後股價反彈；目前 32,771 張已接近該水位，<span class="hl">過度悲觀可能已接近極值</span>。</li>
+      <li>雙頭型態：頭 322（2024/9）＋ 肩 312（2025/3）＋ 頸線 196.5（2025/4 關稅低），頸線跌破量測目標 <span class="hl-red">71 元</span>。</li>
+      <li><span class="hl-red">長期上升軌道已跌破</span>：線性軌道（2020/3→2025/11）@ 今日 178.4；對數軌道 @ 今日 195.8。現價 159 跌破兩條軌道 -10.9% / -18.8%。</li>
+      <li>均線扣抵：<span class="hl">MA20 上彎</span>（147.5，扣抵值 142→148.5 走高），但 MA60/120/240 全下彎，中長期空頭排列未破。</li>
+      <li>近一年外資累賣 <span class="hl-red">-80,758 張</span>，近 60 日 -25,409 張；但近 20 日轉為 +176 張，短期止血。</li>
+      <li>2025 全年 EPS <span class="hl">9.14 元</span>（年增 96% 歷史新高），但 Q4 單季急凍（EPS 0.97 元、季減 73.6%）；2026 Q1 營收累計年增 7.1%，進入<span class="hl">被動去庫存</span>期。</li>
     </ul>
+  </div>
+</section>
+
+<!-- 借券餘額專章 -->
+<section class="scoring open" id="borrow-info">
+  <button class="scoring-toggle" onclick="this.closest('.scoring').classList.toggle('open')">
+    <h3>🔴 借券賣出餘額追蹤（新增）</h3>
+    <span class="arr">▾</span>
+  </button>
+  <div class="scoring-body">
+    <div class="scoring-inner">
+      <table>
+        <tr><th>日期</th><th>事件</th><th>股價</th><th>借券餘額</th><th>意義</th></tr>
+        <tr><td>2013/05/31</td><td>歷史借券最高</td><td>21.4</td><td><b>63,523</b></td><td>長期底部區，空方極致</td></tr>
+        <tr><td>2022/11/28</td><td>2022/11 波段低</td><td>184.0</td><td>36,748</td><td>借券高峰 → 之後反彈</td></tr>
+        <tr><td>2023/05/09</td><td>2023/5 借券高</td><td>192.0</td><td>44,802</td><td>之後盤整後反彈到 Q2 高</td></tr>
+        <tr><td>2024/09/25</td><td>歷史股價高 322</td><td>310.5</td><td>22,184</td><td>高點借券不算極高</td></tr>
+        <tr><td>2025/03/07</td><td>雙頭 312</td><td>312.0</td><td style="color:var(--c5);font-weight:800">6,559</td><td>借券極低，空方未警覺</td></tr>
+        <tr><td>2025/11/19</td><td>2025/11 低 167.5</td><td>169.0</td><td>7,526</td><td>借券仍低，跌勢初始</td></tr>
+        <tr><td>2026/01/02</td><td>2026/1 反彈高</td><td>201.0</td><td>18,732</td><td>空方開始布空</td></tr>
+        <tr><td>2026/03/31</td><td>波段低 136</td><td>136.5</td><td>32,911</td><td>空方瘋狂布空</td></tr>
+        <tr><td style="background:#ffe89b"><b>2026/04/22</b></td><td><b>最新</b></td><td><b>159.0</b></td><td><b>32,771</b></td><td><b>接近 2022/11 極值</b></td></tr>
+      </table>
+      <p style="margin:8px 0 0;font-size:11px;color:var(--ink-3)">
+        <b>🔥 核心訊號</b>：借券餘額從 2025/10 的 8,995 張暴增至 2026/04 的 32,771 張，+264%，<b>與外資賣超 -83,911 張同步發生</b>，是典型的「外資借券賣出對沖」空方動作。占流通股本比例 2.85%，數量可觀。<br>
+        <b>反向訊號</b>：歷史上，借券餘額 3~4 萬張級別後，常對應波段底部（如 2022/11 的 36,748 張）。目前 32,771 張已接近該水位，若接下來開始<b>減少（空方回補）</b>，將是強烈反彈訊號。<br>
+        <b>關鍵觀察</b>：借券「增減」方向比「絕對值」更重要。<b>借券連續減少 + 外資轉買超</b> = 底部確認；反之若借券再攻 40K 以上，下一波空襲隨時啟動。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 上升軌道 -->
+<section class="scoring open" id="channel-info">
+  <button class="scoring-toggle" onclick="this.closest('.scoring').classList.toggle('open')">
+    <h3>📈 線性與對數上升軌道（新增）</h3>
+    <span class="arr">▾</span>
+  </button>
+  <div class="scoring-body">
+    <div class="scoring-inner">
+      <table>
+        <tr><th>軌道</th><th>錨點</th><th>今日值</th><th>3 月後</th><th>6 月後</th><th>現價距軌道</th></tr>
+        <tr><td>線性軌道</td><td>2020/3 疫情低 20.6 → 2025/11 低 167.5</td><td><b>178.4</b></td><td>184.8</td><td>191.2</td><td style="color:var(--c1);font-weight:800">-10.9%（跌破）</td></tr>
+        <tr><td>對數軌道</td><td>2020/3 疫情低 20.6 → 2025/11 低 167.5</td><td><b>195.8</b></td><td>214.4</td><td>234.9</td><td style="color:var(--c1);font-weight:800">-18.8%（跌破）</td></tr>
+        <tr><td>舊軌道（已廢）</td><td>2020/3 → 2022/11 低 155.5（大漲段）</td><td>325.6</td><td>—</td><td>—</td><td style="color:var(--ink-3)">斜率過陡，已不適用</td></tr>
+      </table>
+      <p style="margin:8px 0 0;font-size:11px;color:var(--ink-3)">
+        <b>結構訊號</b>：2026/3 波段低 136 跌破線性軌道 -23.8%，跌破對數軌道 -30.5%。意味著 2020/3 以來的長期上升結構已<b>明確破位</b>。<br>
+        <b>軌道轉壓力</b>：當上升軌道被跌破後，軌道線就從「下方支撐」轉為「上方壓力」。目前 <b>178 元 = 線性軌道</b>、<b>196 元 = 對數軌道</b>，都是反彈要克服的關鍵位，恰好與 ②③ 壓力帶重疊 → 加強這兩帶區的壓力強度。<br>
+        <b>重建軌道條件</b>：若未來股價能站回 180 以上且形成新的低點抬高（例如未來 2~3 月有新低但高於 136），可重建新的上升軌道。現階段結構性轉弱，需要「時間 × 成交量」修復。
+      </p>
+    </div>
   </div>
 </section>
 
@@ -250,17 +303,18 @@ body{
     <div class="scoring-inner">
       <table>
         <tr><th>星級</th><th>條件</th><th>範例</th></tr>
-        <tr><td>★★★★★</td><td>5＋ 獨立方法匯聚窄區間（≦10 元）＋ 波段低加持 ＋ 整數關卡</td><td>135~145</td></tr>
+        <tr><td>★★★★★</td><td>5＋ 獨立方法匯聚窄區間（≦10 元）＋ 波段低/軌道/整數關卡加持</td><td>135~145、195~215（已失守）</td></tr>
         <tr><td>★★★★</td><td>4＋ 方法匯聚，量能中等或伴隨歷史關鍵低點</td><td>178~195、125~135</td></tr>
         <tr><td>★★★</td><td>3~4 方法 ＋ 量能厚度偏高，或已失守性質轉壓力</td><td>165~178、85~100</td></tr>
-        <tr><td>★★</td><td>2~3 方法 ＋ 量能極薄或為雙頭量測極端情境</td><td>100~115、65~85</td></tr>
+        <tr><td>★★</td><td>2~3 方法 ＋ 量能極薄或為雙頭量測極端情境</td><td>155~165、65~85</td></tr>
         <tr><td>★</td><td>多方法但屬尾部極端崩跌情境，非主線</td><td>50~65</td></tr>
       </table>
       <p style="margin:8px 0 0;font-size:11px;color:var(--ink-3)">
-        技術方法：Fibonacci 回撤（線性＋對數）、N 波等幅/倍幅、雙頭型態量測、歷史量密集區、超長週期 Fib、長期均線扣抵。<br>
+        <b>v2 更新</b>：新增「線性軌道 178.4」、「對數軌道 195.8」、「借券賣出餘額 32,771 張（近 3 年新高）」三個面向納入匯聚帶計算。<br>
+        技術方法：Fibonacci 回撤（線性＋對數）、N 波等幅/倍幅、雙頭型態量測、歷史量密集區、超長週期 Fib、長期均線扣抵、上升軌道線。<br>
         波段定義：A=2022/11 低 155.5→2024/9 高 322；B=2023/10 低 165.5→2024/9 高 322；最長 L=2020/3 疫情低 20.6→2024/9 高 322；超長 S=2008/11 海嘯低 10.85→2024/9 高 322。<br>
-        成交量：原始數據觸及法（日線高低觸及帶區即計入全日成交量，全歷史累計）。量能條以 3,199K（65~80 帶區，為支撐帶中最厚）為 100% 基準，超過 100% 顯示為滿條。<br>
-        殖利率：以預估 2026 配息 5.0 元計算（2025 EPS 9.14 × 歷史配息率 ~55%）。已失守帶區：星級凍結，性質轉為反彈壓力。
+        成交量：原始數據觸及法（日線高低觸及帶區即計入全日成交量，全歷史累計）。量能條以 4,224K（178~195 帶區，全表最厚）為 100% 基準。<br>
+        殖利率：以預估 2026 配息 5.0 元計算（2025 EPS 9.14 × 歷史配息率 ~55%）。
       </p>
     </div>
   </div>
@@ -269,72 +323,74 @@ body{
 <!-- ═════ ZONE LIST ═════ -->
 <div class="zones">
 
-  <!-- ① 195–215 ★★★★ 已失守 (最重套牢 + 雙頭頸線) -->
+  <!-- ① 195–215 ★★★★★ 已失守 (雙頭頸線 + 對數軌道 + MA240) -->
   <div class="zone" data-c="1">
     <div class="z-left">
       <div class="price m">195 – 215</div>
-      <div class="name">雙頭頸線 + 主套牢帶</div>
-      <div class="stars"><span class="on">★★★★</span><span class="off">☆</span></div>
+      <div class="name">雙頭頸線＋對數軌道＋MA240</div>
+      <div class="stars"><span class="on">★★★★★</span></div>
       <div class="meta">
-        <span class="badge">已失守</span>
-        <span class="dist m">距現價 <b>+26.6% ~ +39.6%</b></span>
+        <span class="badge">最強壓力</span>
+        <span class="dist m">距現價 <b>+22.6% ~ +35.2%</b></span>
       </div>
       <div class="vol-bar">
-        <div class="vol-track"><div class="vol-fill" style="width:100%"></div></div>
-        <span class="vol-label">5,651K 極厚</span>
+        <div class="vol-track"><div class="vol-fill" style="width:87%"></div></div>
+        <span class="vol-label">3,661K 極厚</span>
       </div>
     </div>
     <div class="z-right">
       <div class="z-cols">
         <div>
-          <h4>技術來源（5 方法）</h4>
+          <h4>技術來源（6 方法匯聚）</h4>
           <div class="chips">
             <span class="chip"><em>雙頭頸線</em><b>196.5</b></span>
+            <span class="chip"><em>對數軌道</em><b>195.8</b></span>
             <span class="chip"><em>B線Fib0.786</em><b>198.99</b></span>
             <span class="chip"><em>2026/1 高</em><b>201.5</b></span>
+            <span class="chip"><em>MA240（下彎）</em><b>203.2</b></span>
             <span class="chip"><em>C對Fib0.786</em><b>215.65</b></span>
-            <span class="chip"><em>2025/4 關稅低</em><b>196.5</b></span>
           </div>
           <ul style="margin-top:5px">
             <li>殖利率 <b>2.3~2.6%</b>（偏低）</li>
-            <li>PE @ 2025 EPS 9.14 = <b>21.3~23.5x</b></li>
+            <li>PE @ 2025 EPS = <b>21~24x</b></li>
           </ul>
         </div>
         <div>
-          <h4>量能解讀</h4>
+          <h4>量能 × 籌碼解讀</h4>
           <ul>
-            <li>歷史成交量 <b>5,651K</b>（全表最厚壓力帶）</li>
-            <li>近一年套牢量 <b>807K</b>，占近一年總量 <b>27%</b></li>
-            <li>2025/4 頸線跌破後、2026/1 反彈高 201.5 再跌破 = <b>二次確認空方型態</b></li>
-            <li>MA240（203.49）在此區，為長期空頭壓制</li>
+            <li>歷史量 <b>3,661K</b>，近一年套牢 <b>413K</b></li>
+            <li><b>對數上升軌道在此 → 軌道轉為壓力</b></li>
+            <li>MA240 203.2 為空頭排列的長期分界</li>
+            <li>2025/4 頸線跌破 + 2026/1 反彈 201.5 再跌破 = 二次確認</li>
           </ul>
         </div>
       </div>
-      <div class="verdict">5 方法匯聚 + 極厚量 + 雙頭頸線 → <b>★★★★（已失守）</b>。這是元太從 2024/9 見頂後最難克服的反彈壓力。站回 215 + 放量才算<b>初步修復雙頭型態</b>，否則 2026/1 下跌結構仍未改。</div>
+      <div class="verdict">6 方法 + 極厚量 + <b>雙頭頸線 + 對數軌道 + MA240 三重壓制</b> → <b>★★★★★（已失守 → 最強反彈壓力）</b>。站回 215 且放量突破才算<b>修復雙頭型態並重建上升軌道</b>；未突破前，任何反彈到此帶都是逢高減碼區。</div>
     </div>
   </div>
 
-  <!-- ② 178–195 ★★★★ 已失守 (Fib 0.786 共振) -->
+  <!-- ② 178–195 ★★★★ 已失守 (Fib 0.786 + 線性軌道 + MA120) -->
   <div class="zone" data-c="2">
     <div class="z-left">
       <div class="price m">178 – 195</div>
-      <div class="name">Fib 0.786/0.886 共振帶</div>
+      <div class="name">Fib 0.786＋線性軌道＋MA120</div>
       <div class="stars"><span class="on">★★★★</span><span class="off">☆</span></div>
       <div class="meta">
-        <span class="badge">已失守</span>
-        <span class="dist m">距現價 <b>+15.6% ~ +26.6%</b></span>
+        <span class="badge">強壓力</span>
+        <span class="dist m">距現價 <b>+11.9% ~ +22.6%</b></span>
       </div>
       <div class="vol-bar">
         <div class="vol-track"><div class="vol-fill" style="width:100%"></div></div>
-        <span class="vol-label">4,224K 極厚</span>
+        <span class="vol-label">4,224K 最厚</span>
       </div>
     </div>
     <div class="z-right">
       <div class="z-cols">
         <div>
-          <h4>技術來源（5 方法共振）</h4>
+          <h4>技術來源（6 方法共振）</h4>
           <div class="chips">
-            <span class="chip"><em>B對Fib0.886</em><b>178.55</b></span>
+            <span class="chip"><em>MA120（下彎）</em><b>177.2</b></span>
+            <span class="chip"><em>線性軌道</em><b>178.4</b></span>
             <span class="chip"><em>2024/1 低</em><b>180</b></span>
             <span class="chip"><em>A對Fib0.786</em><b>181.71</b></span>
             <span class="chip"><em>B線Fib0.886</em><b>183.34</b></span>
@@ -343,17 +399,17 @@ body{
           </div>
         </div>
         <div>
-          <h4>量能解讀</h4>
+          <h4>量能 × 籌碼解讀</h4>
           <ul>
-            <li>歷史成交量 <b>4,224K</b>（極厚）</li>
-            <li>近一年套牢量 <b>369K</b></li>
-            <li><b>Fib 0.786</b> — 線性+對數雙重確認，兩波段交叉</li>
-            <li>MA120（177.63）在此區下緣，長期空頭助跌</li>
-            <li>殖利率 <b>2.6~2.8%</b></li>
+            <li>歷史量 <b>4,224K（全表最厚壓力）</b></li>
+            <li>近一年套牢 <b>369K</b></li>
+            <li><b>線性上升軌道在此 → 軌道轉為壓力</b></li>
+            <li>Fib 0.786（A+B 兩波段，線性+對數）四重確認</li>
+            <li>MA120 扣抵強力下彎至少 2 個月</li>
           </ul>
         </div>
       </div>
-      <div class="verdict">5 方法密集匯聚於 17 元區間 + 極厚量 → <b>★★★★（已失守）</b>。Fib 0.786 為空頭「深度回跌」的經典關卡，此帶 + 185 元附近的 MA120 構成反彈的<b>中線最強壓力</b>。突破需放大量 + 站穩 195。</div>
+      <div class="verdict">6 方法 + 全表最厚量 + <b>線性軌道 + MA120 雙重壓制</b> → <b>★★★★（已失守）</b>。這是中線反彈最關鍵的壓力帶。突破需配合：① 放量 ② MA60 走平 ③ 借券餘額下降。短期預期此帶仍會封頂。</div>
     </div>
   </div>
 
@@ -361,118 +417,151 @@ body{
   <div class="zone" data-c="3">
     <div class="z-left">
       <div class="price m">165 – 178</div>
-      <div class="name">Fib 0.886 + MA60 壓制</div>
+      <div class="name">Fib 0.886＋MA60 壓制</div>
       <div class="stars"><span class="on">★★★</span><span class="off">☆☆</span></div>
       <div class="meta">
-        <span class="badge">已失守</span>
-        <span class="dist m">距現價 <b>+7.1% ~ +15.6%</b></span>
+        <span class="badge">中線壓力</span>
+        <span class="dist m">距現價 <b>+3.8% ~ +11.9%</b></span>
       </div>
       <div class="vol-bar">
-        <div class="vol-track"><div class="vol-fill" style="width:100%"></div></div>
+        <div class="vol-track"><div class="vol-fill" style="width:83%"></div></div>
         <span class="vol-label">3,505K 厚</span>
       </div>
     </div>
     <div class="z-right">
       <div class="z-cols">
         <div>
-          <h4>技術來源（6 方法）</h4>
+          <h4>技術來源（5 方法）</h4>
           <div class="chips">
             <span class="chip"><em>2023/10 低</em><b>165.5</b></span>
             <span class="chip"><em>2025/11 低</em><b>167.5</b></span>
             <span class="chip"><em>A對Fib0.886</em><b>168.95</b></span>
             <span class="chip"><em>C波1.272倍</em><b>172.16</b></span>
             <span class="chip"><em>A線Fib0.886</em><b>174.48</b></span>
-            <span class="chip"><em>MA60（下彎）</em><b>162.8</b></span>
+            <span class="chip"><em>MA60（下彎）</em><b>162.5</b></span>
           </div>
         </div>
         <div>
-          <h4>量能解讀</h4>
+          <h4>量能 × 籌碼解讀</h4>
           <ul>
-            <li>歷史成交量 <b>3,505K</b>（全表前五厚）</li>
-            <li>近一年套牢 <b>180K</b></li>
-            <li>2023/10 與 2025/11 兩個波段低在此匯聚 = <b>雙重失守</b></li>
-            <li>MA60（162.8）方向下彎，扣抵值 175.5 持續下彎至少 2 週</li>
+            <li>歷史量 <b>3,505K</b>，近一年套牢 <b>180K</b></li>
+            <li>2023/10 與 2025/11 兩個歷史低點在此 = <b>雙重失守</b></li>
+            <li>MA60（162.5）方向下彎，扣抵值 173→180.5 走高</li>
             <li>殖利率 <b>2.8~3.0%</b></li>
           </ul>
         </div>
       </div>
-      <div class="verdict">6 方法 + 厚量 → <b>★★★（已失守）</b>。現階段最近的反彈壓力帶。MA60 下彎壓制 + Fib 0.886 技術防線雙重封頂，<b>短線反彈 165 附近極可能遇壓回落</b>。站回 178 才算跨越第一道空頭關卡。</div>
+      <div class="verdict">5 方法 + 厚量 + MA60 下彎壓制 → <b>★★★（已失守）</b>。近期反彈<b>第一道壓力</b>。若 MA60 扣抵值高於現值持續 → 均線下壓仍強，難輕易克服。站回 178 才算跨越第一道空頭關卡。</div>
     </div>
   </div>
 
-  <div class="gap">
-    <div class="g-range m">155 – 165</div>
-    <div class="g-desc"><strong>MA60 過渡帶</strong>｜2022/11 低 155.5、2021/12 高 153、MA60 162.8 集中此區。歷史量 1,404K。近期反彈首要測試區，站穩才能挑戰 ③ 帶壓力。</div>
+  <!-- ④ 155–165 ★★ 近壓 (2022/11 低 + MA5/10 上緣) -->
+  <div class="zone" data-c="4">
+    <div class="z-left">
+      <div class="price m">155 – 165</div>
+      <div class="name">2022/11 低＋短均線上緣</div>
+      <div class="stars"><span class="on">★★</span><span class="off">☆☆☆</span></div>
+      <div class="meta">
+        <span class="badge">近壓</span>
+        <span class="dist m">距現價 <b>-2.5% ~ +3.8%</b></span>
+      </div>
+      <div class="vol-bar">
+        <div class="vol-track"><div class="vol-fill" style="width:33%"></div></div>
+        <span class="vol-label">1,415K 中</span>
+      </div>
+    </div>
+    <div class="z-right">
+      <div class="z-cols">
+        <div>
+          <h4>技術來源（3 方法）</h4>
+          <div class="chips">
+            <span class="chip"><em>MA5</em><b>156.2</b></span>
+            <span class="chip"><em>2022/11 低</em><b>155.5</b></span>
+            <span class="chip"><em>MA60 下緣</em><b>162.5</b></span>
+            <span class="chip"><em>2021/12 高</em><b>153</b></span>
+          </div>
+        </div>
+        <div>
+          <h4>量能 × 籌碼解讀</h4>
+          <ul>
+            <li>歷史量 <b>1,415K</b>，近一年 134K</li>
+            <li>近3月套牢 134K（部分新套牢）</li>
+            <li>4/22 最高觸及 163.5 後拉回 = <b>初次試探此帶</b></li>
+            <li>殖利率 <b>3.0~3.2%</b></li>
+          </ul>
+        </div>
+      </div>
+      <div class="verdict">3 方法 + 中量 → <b>★★（當前實測中）</b>。<b>短線反彈第一道實測壓力帶</b>。4/22 高點 163.5 即卡在此區。若能放量站穩 165 → 挑戰 ③ 帶；若在此做頭 → 回測 ⑤ 帶。關鍵觀察週。</div>
+    </div>
   </div>
 
   <!-- 現價 -->
   <div class="now-row m">
     <span class="arrow">▸</span>
     <span class="label">現價</span>
-    <span class="val">154.0</span>
-    <span class="note">收盤 2026/04/21 ｜ 波段低 136.0（3/31）｜ MA5=154.5, MA10=150.6, MA20=146.7</span>
+    <span class="val">159.0</span>
+    <span class="note">收盤 2026/04/22 ｜ +3.25% 量 10,561 張 ｜ MA20=147.5（上彎）</span>
   </div>
 
   <div class="gap">
-    <div class="g-range m">145 – 154</div>
-    <div class="g-desc"><strong>短期反彈測試區</strong>｜MA20（146.7）剛方向上彎 + 近3月主要套牢點（189K）。若 MA20 失守且放量跌破 145，代表短期反彈失敗，重新測試 ④ 帶區。</div>
+    <div class="g-range m">145 – 155</div>
+    <div class="g-desc"><strong>短期支撐區</strong>｜MA20（147.5，上彎）＋ MA10（151.7）＋ 近3月套牢 200K（最集中的短線籌碼）。若跌破 145 且 MA20 下彎，短期反彈結構宣告破壞，重測 ⑤ 帶。</div>
   </div>
 
-  <!-- ④ 135–145 ★★★★★ 第一主要支撐 -->
-  <div class="zone" data-c="4">
+  <!-- ⑤ 135–145 ★★★★★ 主支撐 -->
+  <div class="zone" data-c="5">
     <div class="z-left">
       <div class="price m">135 – 145</div>
       <div class="name">第一主要支撐帶 ⭐</div>
       <div class="stars"><span class="on">★★★★★</span></div>
       <div class="meta">
-        <span class="badge">最強</span>
-        <span class="dist m">距現價 <b>-12.3% ~ -5.8%</b></span>
+        <span class="badge">最強支撐</span>
+        <span class="dist m">距現價 <b>-15.1% ~ -8.8%</b></span>
       </div>
       <div class="vol-bar">
-        <div class="vol-track"><div class="vol-fill" style="width:33%"></div></div>
+        <div class="vol-track"><div class="vol-fill" style="width:25%"></div></div>
         <span class="vol-label">1,050K 中</span>
       </div>
     </div>
     <div class="z-right">
       <div class="z-cols">
         <div>
-          <h4>技術來源（6 方法密集匯聚）</h4>
+          <h4>技術來源（5 方法密集匯聚）</h4>
           <div class="chips">
             <span class="chip"><em>最長線Fib0.618</em><b>135.73</b></span>
-            <span class="chip"><em>波段低（3/31）</em><b>136.0</b></span>
+            <span class="chip"><em>波段低 3/31, 4/2</em><b>136</b></span>
             <span class="chip"><em>整數 140</em><b>140</b></span>
             <span class="chip"><em>C波1.618倍延伸</em><b>141.19</b></span>
             <span class="chip"><em>超長對Fib0.236</em><b>144.66</b></span>
-            <span class="chip"><em>中N波A2接近</em><b>~150</b></span>
           </div>
         </div>
         <div>
-          <h4>量能解讀（三維度均衡）</h4>
+          <h4>量能 × 籌碼解讀（三維度）</h4>
           <ul>
-            <li><b>技術</b>：6 方法匯聚於 10 元窄區，包括<b>最長波段 Fib 0.618 黃金分割</b></li>
-            <li><b>波段低 136（3/31, 4/2 兩次測試）</b>= 市場心理防線</li>
-            <li><b>量能</b>：歷史量 1,050K 中偏薄，但近 3 月套牢量 97K 已形成短期籌碼</li>
-            <li><b>殖利率</b>：<b>3.4~3.7%</b>（以配息 5 元計）</li>
-            <li><b>估值</b>：PE @ 2025 EPS 9.14 = <b>14.8~15.9x</b>（歷史偏低）</li>
+            <li><b>技術</b>：5 方法匯聚，含<b>最長波段 Fib 0.618 黃金分割</b></li>
+            <li><b>波段低 136（3/31、4/2 雙重測試成立）</b>= 市場心理防線</li>
+            <li><b>量能</b>：歷史 1,050K（中），近 3 月套牢 97K</li>
+            <li><b>借券對照</b>：3/31 波段低時借券 32,911 張 ≈ 2022/11 波段低極值</li>
+            <li><b>殖利率</b>：<b>3.4~3.7%</b>；PE <b>14.8~15.9x</b>（歷史偏低）</li>
           </ul>
         </div>
       </div>
-      <div class="verdict">6 方法匯聚 × 波段低 × 最長波 Fib 0.618 × 整數 140 ＝ <b>★★★★★ 核心支撐</b>。這是跌破後若二次測試最可能的止跌位。若在此形成<b>日線 W 底 + 量能放大</b>，可初步確認波段底。跌破 135 → 轉入五波修正，下看 ⑤ 帶 125~135。</div>
+      <div class="verdict">5 方法匯聚 × 波段低 × 最長波 Fib 0.618 × 整數 140 × <b>借券峰值加持</b> → <b>★★★★★ 核心支撐</b>。若在此形成日線 W 底 + 借券下降 → 可確認波段底。跌破 135 → 轉入五波修正，下看 ⑥ 帶（125-135）；此帶目前<b>為最強的一道防線</b>。</div>
     </div>
   </div>
 
-  <!-- ⑤ 125–135 ★★★★ 次級支撐 -->
-  <div class="zone" data-c="5">
+  <!-- ⑥ 125–135 ★★★★ 次級支撐 -->
+  <div class="zone" data-c="6">
     <div class="z-left">
       <div class="price m">125 – 135</div>
-      <div class="name">2022/3 低 + N 波延伸</div>
+      <div class="name">2022/3 低＋N 波延伸</div>
       <div class="stars"><span class="on">★★★★</span><span class="off">☆</span></div>
       <div class="meta">
         <span class="badge">次級支撐</span>
-        <span class="dist m">距現價 <b>-18.8% ~ -12.3%</b></span>
+        <span class="dist m">距現價 <b>-21.4% ~ -15.1%</b></span>
       </div>
       <div class="vol-bar">
-        <div class="vol-track"><div class="vol-fill" style="width:19%"></div></div>
+        <div class="vol-track"><div class="vol-fill" style="width:14%"></div></div>
         <span class="vol-label">610K 中</span>
       </div>
     </div>
@@ -490,78 +579,35 @@ body{
         <div>
           <h4>量能解讀</h4>
           <ul>
-            <li>歷史成交量 <b>610K</b>（中等）</li>
-            <li><b>2022/3 波段低 126.5</b> — 過去兩年半最堅強的結構性低點</li>
+            <li>歷史量 <b>610K</b>（中）</li>
+            <li><b>2022/3 波段低 126.5</b> — 過去 4 年最堅強的結構性低點</li>
             <li>大 N 波與 C 波延伸雙重在 126 匯聚</li>
-            <li>殖利率 <b>3.7~4.0%</b></li>
-            <li>PE @ 2025 EPS 9.14 = <b>13.7~14.8x</b></li>
+            <li>殖利率 <b>3.7~4.0%</b>；PE <b>13.7~14.8x</b></li>
           </ul>
         </div>
       </div>
-      <div class="verdict">4 方法匯聚 + 2022/3 歷史波段低 → <b>★★★★</b>。若 ④ 135-145 失守，此帶為最重要的下一道防線。跌至 126.5 = 過去 2.5 年漲幅幾乎全吐，基本面若仍健在，此處具<b>逆勢反彈價值</b>。</div>
+      <div class="verdict">4 方法匯聚 + 2022/3 歷史波段低 → <b>★★★★</b>。若 ⑤ 135-145 失守，此帶為最重要的下一道防線。跌至 126.5 = 過去 4 年漲幅幾乎全吐，基本面若仍健在（2025 EPS 9.14 歷史新高），此處具<b>逆勢反彈價值</b>。</div>
     </div>
   </div>
 
   <div class="gap">
     <div class="g-range m">115 – 125</div>
-    <div class="g-desc"><strong>量薄過渡帶</strong>｜雙頭量測 0.618 延伸（118.94）＋ 整數 120 心理關卡。歷史量僅 489K（薄），失守後容易快速滑落。</div>
+    <div class="g-desc"><strong>量薄過渡帶</strong>｜雙頭量測 0.618 延伸（118.94）＋ 整數 120。歷史量僅 489K（13 個交易日），失守後容易快速下殺。</div>
   </div>
 
-  <!-- ⑥ 100–115 ★★ 延伸 (量薄) -->
-  <div class="zone" data-c="6">
-    <div class="z-left">
-      <div class="price m">100 – 115</div>
-      <div class="name">量薄延伸區</div>
-      <div class="stars"><span class="on">★★</span><span class="off">☆☆☆</span></div>
-      <div class="meta">
-        <span class="badge">量薄</span>
-        <span class="dist m">距現價 <b>-35.1% ~ -25.3%</b></span>
-      </div>
-      <div class="vol-bar">
-        <div class="vol-track"><div class="vol-fill" style="width:10%"></div></div>
-        <span class="vol-label">316K 極薄</span>
-      </div>
-    </div>
-    <div class="z-right">
-      <div class="z-cols">
-        <div>
-          <h4>技術來源（2 方法）</h4>
-          <div class="chips">
-            <span class="chip"><em>最長對Fib0.382</em><b>112.66</b></span>
-            <span class="chip"><em>整數 100 心理關卡</em><b>100</b></span>
-          </div>
-          <ul style="margin-top:5px">
-            <li>殖利率 <b>4.3~5.0%</b></li>
-            <li>PE @ 2025 EPS 9.14 = <b>10.9~12.6x</b></li>
-          </ul>
-        </div>
-        <div>
-          <h4>量能解讀</h4>
-          <ul>
-            <li>歷史成交量僅 <b>316K</b>（全表最薄）</li>
-            <li>此段為 2021 漲勢中<b>急漲過的薄板區</b>，未久留</li>
-            <li>缺少籌碼換手基礎，失守不會久留</li>
-            <li>若跌至此，通常為<b>恐慌情緒主導</b>，快速下殺</li>
-          </ul>
-        </div>
-      </div>
-      <div class="verdict">2 方法 + 極薄量 → <b>★★</b>。量薄帶的特性是<b>失守後快速滑落</b>，不具備有效承接能力。整數 100 元心理關卡若失守 → 直落 ⑦ 帶 85-100。</div>
-    </div>
-  </div>
-
-  <!-- ⑦ 85–100 ★★★ 厚量歷史支撐 -->
+  <!-- ⑦ 95–115 + 85–100 合併為「延伸 + 歷史平台」 -->
   <div class="zone" data-c="7">
     <div class="z-left">
-      <div class="price m">85 – 100</div>
-      <div class="name">厚量歷史整理區</div>
+      <div class="price m">85 – 115</div>
+      <div class="name">量薄延伸＋歷史平台</div>
       <div class="stars"><span class="on">★★★</span><span class="off">☆☆</span></div>
       <div class="meta">
-        <span class="badge">厚量</span>
-        <span class="dist m">距現價 <b>-44.8% ~ -35.1%</b></span>
+        <span class="badge">深跌區</span>
+        <span class="dist m">距現價 <b>-46.5% ~ -27.7%</b></span>
       </div>
       <div class="vol-bar">
-        <div class="vol-track"><div class="vol-fill" style="width:33%"></div></div>
-        <span class="vol-label">1,054K 中</span>
+        <div class="vol-track"><div class="vol-fill" style="width:24%"></div></div>
+        <span class="vol-label">1,000K 混合</span>
       </div>
     </div>
     <div class="z-right">
@@ -569,27 +615,27 @@ body{
         <div>
           <h4>技術來源（3 方法）</h4>
           <div class="chips">
+            <span class="chip"><em>最長對Fib0.382</em><b>112.66</b></span>
+            <span class="chip"><em>整數 100</em><b>100</b></span>
             <span class="chip"><em>超長對Fib0.382</em><b>88.18</b></span>
-            <span class="chip"><em>最長對Fib0.5</em><b>81.44</b></span>
-            <span class="chip"><em>2021 Q3-Q4 整理區</em><b>85~95</b></span>
+            <span class="chip"><em>2021 整理平台</em><b>85~95</b></span>
           </div>
         </div>
         <div>
           <h4>量能解讀</h4>
           <ul>
-            <li>歷史成交量 <b>1,054K</b>（含 80-95 帶為 1,780K）</li>
-            <li>2021 下半年的整理區，是從 20.6 啟漲到 322 的<b>中繼平台</b></li>
-            <li>殖利率 <b>5.0~5.9%</b>（接近存股吸引力）</li>
-            <li>PE @ 2025 EPS 9.14 = <b>9.3~10.9x</b>（歷史極低）</li>
-            <li>意味：長達 5 年漲幅幾乎回吐</li>
+            <li>95-115 歷史量僅 <b>316K</b>（極薄），失守快速下殺</li>
+            <li>85-95 歷史量 <b>684K</b>（中），為 2021 整理平台</li>
+            <li>殖利率 <b>4.3~5.9%</b>（長線存股吸引力開始浮現）</li>
+            <li>PE <b>9.3~12.6x</b>（歷史極低）</li>
           </ul>
         </div>
       </div>
-      <div class="verdict">3 方法 + 中厚量 + 歷史平台 → <b>★★★</b>。系統性崩跌 + 2026 EPS 若下修至 6-7 元以下才會觸及。此帶為<b>長線存股的第一個吸引力區域</b>（殖利率 5%+、PE 10x 以下），但屬深度修正情境。</div>
+      <div class="verdict">合併帶區，量分布上下結構差異大 → <b>★★★</b>。<b>115→95 為量薄空窗</b>，失守 125 後會快速下殺；<b>95→85 為 2021 歷史平台</b>，具備承接力。系統性崩跌且基本面轉差才會觸及。此帶為<b>長線分批進場的第一吸引區</b>。</div>
     </div>
   </div>
 
-  <!-- ⑧ 65–85 ★★ 雙頭量測 + 極端 -->
+  <!-- ⑧ 65–85 ★★ 雙頭量測 -->
   <div class="zone" data-c="8">
     <div class="z-left">
       <div class="price m">65 – 85</div>
@@ -597,11 +643,11 @@ body{
       <div class="stars"><span class="on">★★</span><span class="off">☆☆☆</span></div>
       <div class="meta">
         <span class="badge">極端情境</span>
-        <span class="dist m">距現價 <b>-57.8% ~ -44.8%</b></span>
+        <span class="dist m">距現價 <b>-59.1% ~ -46.5%</b></span>
       </div>
       <div class="vol-bar">
-        <div class="vol-track"><div class="vol-fill" style="width:100%"></div></div>
-        <span class="vol-label">3,330K 厚</span>
+        <div class="vol-track"><div class="vol-fill" style="width:55%"></div></div>
+        <span class="vol-label">2,306K 厚</span>
       </div>
     </div>
     <div class="z-right">
@@ -616,17 +662,16 @@ body{
           </div>
         </div>
         <div>
-          <h4>量能解讀</h4>
+          <h4>量能 × 估值</h4>
           <ul>
-            <li>歷史成交量 <b>3,330K</b>（厚）</li>
-            <li><b>雙頭量測 71 元</b> = 322 頭距 196.5 頸線的等幅下跌目標</li>
+            <li>歷史量 <b>2,306K</b>（厚）</li>
+            <li><b>雙頭量測 71 元</b> = 理論滿足點</li>
             <li>殖利率 <b>5.9~7.7%</b>（歷史高位）</li>
-            <li>PE @ 2025 EPS 9.14 = <b>7.1~9.3x</b>（極低）</li>
-            <li>回到 2020 疫情後第一波上升中段</li>
+            <li>PE <b>7.1~9.3x</b>（極低）</li>
           </ul>
         </div>
       </div>
-      <div class="verdict">4 方法 + 厚量 + 雙頭量測目標 → <b>★★</b>（極端情境）。需要<b>全球衰退 + 電子紙產業重大利空 + 獲利腰斬</b>三重打擊才會觸及。非主劇本，但雙頭型態理論目標值得保留觀察。</div>
+      <div class="verdict">4 方法 + 厚量 + 雙頭量測目標 → <b>★★</b>（極端情境）。需要<b>全球衰退 + 電子紙產業利空 + 獲利腰斬</b>三重打擊才會觸及。非主劇本，但雙頭型態理論目標值得保留觀察。</div>
     </div>
   </div>
 
@@ -642,20 +687,54 @@ body{
     <div class="scoring-inner">
       <table>
         <tr><th>均線</th><th>目前位置</th><th>方向</th><th>扣抵值</th><th>未來走向</th></tr>
-        <tr><td>MA20</td><td>146.70</td><td>↑上彎</td><td>143.5 (3/23)</td><td>扣抵值 143.5→142.5，若股價守 150+ 將延續上彎 1~2 週</td></tr>
-        <tr><td>MA60</td><td>162.80</td><td>↓下彎</td><td>175.5 (1/14)</td><td>扣抵值 175.5→179.5（未來扣抵更高），持續下彎至少 2 週</td></tr>
-        <tr><td>MA120</td><td>177.63</td><td>↓下彎</td><td>217.0 (10/17)</td><td>扣抵值 217→212，強力下彎至少 2 個月（Q4 高檔區慢慢扣出）</td></tr>
-        <tr><td>MA240</td><td>203.49</td><td>↓下彎</td><td>238.0 (2025/4/25)</td><td>扣抵值 238→214，強力下彎（2025 上半年高檔持續扣出）</td></tr>
+        <tr><td>MA5</td><td>156.2</td><td>↑上彎</td><td>—</td><td>短均線上彎，配合站上 MA20 → 短線反彈確認</td></tr>
+        <tr><td>MA10</td><td>151.7</td><td>↑上彎</td><td>—</td><td>與 MA5 同步上彎</td></tr>
+        <tr><td>MA20</td><td>147.5</td><td>↑上彎</td><td>142.0 (3/24)</td><td>扣抵值 142→148.5（未來更高），要求股價守 150+ 才能延續上彎</td></tr>
+        <tr><td>MA60</td><td>162.5</td><td>↓下彎</td><td>173.0 (1/15)</td><td>扣抵值 173→180.5（未來更高），持續下彎至少 3 週</td></tr>
+        <tr><td>MA120</td><td>177.2</td><td>↓下彎</td><td>222.0 (10/20)</td><td>扣抵值 222→209.5，強力下彎至少 2 個月</td></tr>
+        <tr><td>MA240</td><td>203.2</td><td>↓下彎</td><td>237.0 (2025/4/28)</td><td>扣抵值 237→212，強力下彎（2025 上半年高檔陸續扣出）</td></tr>
       </table>
       <p style="margin:8px 0 0;font-size:11px;color:var(--ink-3)">
-        <b>關鍵觀察</b>：MA20 剛上彎 ≠ 止跌訊號，只代表短期反彈成立。真正關鍵是<b>中長期均線何時轉向</b>。
-        MA60 要翻揚需股價站上 180 持續；MA120 扣抵要到 2025/10 的高點全部走完（約 2~3 個月後），才有機會走平。
-        MA240 下彎至少會延續到 2025/10 後半的高點扣出，<b>長期空頭排列結構無法短期改變</b>。<br>
+        <b>關鍵觀察</b>：MA20 上彎代表短期反彈成立，但扣抵值從 142 走高到 148.5 — 意味著<b>未來幾天如果股價跌破 150</b>，MA20 就會再轉下。<br>
+        MA60 扣抵從 173 走高到 180.5（Q4 低檔日漸被扣出）→ <b>MA60 下彎速度加劇</b>，需股價站上 180 持續才能讓 MA60 走平。<br>
+        MA120 / 240 扣抵都在 200+ 元高檔（2025 的頭部區），未來 2~3 個月會持續下扣，長期空頭排列結構短期內不會改變。<br>
         <b>止跌條件層級</b>：<br>
-        ① 短期（1-2 週）：守 MA20（146.7）+ MA5/MA10 金叉 → 反彈延續<br>
-        ② 中期（1-2 月）：站回 165-178（MA60 壓力帶）且 MA60 走平 → 空頭趨勢動搖<br>
-        ③ 長期（3-6 月）：站回 195-215（頸線 + MA240）+ 放量突破 → 雙頭型態修復<br>
-        目前處於 ① 階段的初期測試，中長期趨勢<b>尚未轉向</b>。
+        ① 短期（1-2 週）：守 MA20（147.5）+ 借券餘額開始減少 → 反彈延續<br>
+        ② 中期（1-2 月）：站回 165-178（MA60 + Fib 0.886）且 MA60 走平 → 空頭趨勢動搖<br>
+        ③ 長期（3-6 月）：站回 195-215（頸線 + 對數軌道 + MA240）+ 放量突破 → 結構性修復<br>
+        目前處於 ① 階段的初期測試。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 籌碼面 -->
+<section class="scoring" id="chip-info" style="margin-top:12px">
+  <button class="scoring-toggle" onclick="this.closest('.scoring').classList.toggle('open')">
+    <h3>籌碼面綜合（法人 × 融資券 × 借券）</h3>
+    <span class="arr">▾</span>
+  </button>
+  <div class="scoring-body">
+    <div class="scoring-inner">
+      <table>
+        <tr><th>籌碼指標</th><th>最新數據</th><th>方向</th><th>解讀</th></tr>
+        <tr><td>外資買賣超（4/22）</td><td>+1,686 張</td><td>✅ 買超</td><td>單日強勁買超，止跌訊號</td></tr>
+        <tr><td>外資近 5 日</td><td>+1,422 張</td><td>✅ 轉買</td><td>轉為小幅淨買超</td></tr>
+        <tr><td>外資近 20 日</td><td>+176 張</td><td>⚠️ 微轉</td><td>1 個月賣壓基本中和</td></tr>
+        <tr><td>外資近 60 日</td><td>-25,409 張</td><td>❌ 大賣</td><td>2 個月仍大幅賣超</td></tr>
+        <tr><td>外資近 240 日</td><td>-80,758 張</td><td>❌ 長期賣</td><td>持股從 45%+ 降至 37.2%</td></tr>
+        <tr><td>外資持股比</td><td>37.2%</td><td>↓</td><td>去年高點約 45%</td></tr>
+        <tr><td>投信近 20 日</td><td>+1,139 張</td><td>✅ 轉買</td><td>投信在低檔佈局</td></tr>
+        <tr><td>融資餘額</td><td>9,758 張</td><td>→ 穩定</td><td>已去化至低檔，不再是壓力源</td></tr>
+        <tr><td>融券餘額</td><td>48 張</td><td>極低</td><td>散戶放空意願低</td></tr>
+        <tr><td style="background:#fde6ea"><b>借券賣出餘額</b></td><td><b>32,771 張</b></td><td style="color:var(--c1)">❌ 創新高</td><td><b>近 6 月 +264%，空方施壓</b></td></tr>
+      </table>
+      <p style="margin:8px 0 0;font-size:11px;color:var(--ink-3)">
+        <b>籌碼綜合判讀</b>：外資長賣 - 中賣 - 短買的結構代表<b>大級別趨勢性賣壓可能已近末端，短期止血</b>。但借券賣出餘額仍在高檔，空方尚未全面回補，<b>反彈力道難以一蹴而成</b>。<br>
+        <b>關鍵訊號組合</b>：<br>
+        • 短期反彈確立：外資買超持續 + 借券開始減少 + MA20 續上彎<br>
+        • 波段底確立：借券餘額月減超過 3,000 張 + 外資連續買超 + 站回 165<br>
+        • 反彈失敗警訊：借券再攻 40K 以上 + 外資再大賣 + 跌破 145
       </p>
     </div>
   </div>
@@ -664,7 +743,7 @@ body{
 <!-- 基本面補充 -->
 <section class="scoring" id="fund-info" style="margin-top:12px">
   <button class="scoring-toggle" onclick="this.closest('.scoring').classList.toggle('open')">
-    <h3>基本面 × 產業週期補充</h3>
+    <h3>基本面 × 產業週期</h3>
     <span class="arr">▾</span>
   </button>
   <div class="scoring-body">
@@ -682,21 +761,23 @@ body{
       </table>
       <p style="margin:8px 0 0;font-size:11px;color:var(--ink-3)">
         <b>週期定位</b>：目前處於「<b>主動去庫存末期 ~ 被動去庫存初期</b>」。Q2 客戶提前拉貨 → Q4 急凍 → Q1 營收低基期止血。
-        歷史上去庫存週期約 2~3 季，若 2026 Q2 能看到客戶拉貨回溫，則 ④⑤ 帶（125-145）可能就是本波底部區間。<br>
-        <b>配息預估</b>：2025 EPS 9.14 元，近年配息率約 50-65%，預估 2026 配息 <b>4.5 ~ 6.0 元</b>（中位 5.0 元）。以現價 154 殖利率 3.2%、以 135 殖利率 3.7%。<br>
-        <b>估值錨點</b>：以 2026E EPS 8.5 元（保守）計算 — PE 15x = 127.5 元、PE 18x = 153 元、PE 22x = 187 元、PE 28x = 238 元。目前 PE 18x 附近，相對<b>合理偏低</b>。
+        歷史上去庫存週期約 2~3 季，若 2026 Q2 能看到客戶拉貨回溫，⑤⑥ 帶（125-145）可能就是本波底部區間。<br>
+        <b>配息預估</b>：2025 EPS 9.14 元，近年配息率約 50-65%，預估 2026 配息 <b>4.5 ~ 6.0 元</b>（中位 5.0 元）。以現價 159 殖利率 3.1%、以 135 殖利率 3.7%、以 100 殖利率 5.0%。<br>
+        <b>估值錨點</b>：以 2026E EPS 8.5 元（保守）計算 — PE 15x = 127.5 元、PE 18x = 153 元、PE 22x = 187 元、PE 28x = 238 元。目前 PE ~19x，<b>合理區間偏下緣</b>。
       </p>
     </div>
   </div>
 </section>
 
 <footer class="ft">
-  <b>8069 元太 匯聚帶 v1</b>｜基準日 2026/04/21｜原始日線 + 還原權值 CSV 交叉驗證（數據自 2004/03/30 ~ 2026/04/21 共 5,428 筆）<br>
-  星級 = 技術方法數 × 成交量厚度 × 殖利率 × 區間窄度。量能條以 3,199K（65~80 帶區，支撐帶最厚）為 100% 基準。<br>
-  <b>主劇本</b>（60%）：短線在 MA20（146.7）之上整理 → 反彈到 ③ 帶（165-178）遇壓 → 中期若 MA60 下彎結束，盤整 135-178 箱型。<br>
-  <b>空方劇本</b>（25%）：MA20 失守 + 破 136 → 測試 ④ 帶下緣（135-140），再失守則滑向 ⑤ 帶（125-135，2022/3 歷史低）。<br>
-  <b>極端劇本</b>（15%）：外資持續大賣 + 基本面利空擴散 → 跌破 125 → 量薄區直達 ⑦ 帶（85-100），殖利率 5%+ 長線吸引力浮現。<br>
-  <b>均線環境</b>：MA20 上彎（短期反彈中），MA60/120/240 下彎助跌（中長期空頭排列）。<br>
+  <b>8069 元太 匯聚帶 v2</b>｜基準日 2026/04/22｜原始日線 + 還原權值 + 借券賣出餘額 CSV 交叉驗證<br>
+  <b>v2 新增</b>：借券賣出餘額（32,771 張，近 3 年新高）、線性上升軌道（178.4）、對數上升軌道（195.8）三大維度。<br>
+  星級 = 技術方法數 × 成交量厚度 × 殖利率 × 區間窄度 × 軌道強度。量能條以 4,224K（178~195 帶區）為 100% 基準。<br>
+  <b>主劇本</b>（55%）：MA20 之上短線反彈 → 反彈到 ④ 帶 155-165 遇壓 → 中期盤整 136-165 箱型整理 1~2 月，等待借券減少。<br>
+  <b>多方劇本</b>（20%）：借券大量回補 + 外資持續買 → 放量突破 ④ 帶 → 測試 ③ 帶 165-178。<br>
+  <b>空方劇本</b>（20%）：MA20 失守 + 借券再攻 40K → 重測 ⑤ 帶下緣（135-140），再失守則滑向 ⑥ 帶（125-135）。<br>
+  <b>極端劇本</b>（5%）：基本面大利空 + 全球衰退 → 跌破 125 → 量薄區直達 ⑦ 帶（85-100）。<br>
+  <b>當前位置</b>：反彈波初期 + 借券高檔，需觀察借券增減方向來確認反彈真偽。<br>
   本文件僅供分析參考，不構成投資建議。投資有風險，決策請自行判斷。
 </footer>
 

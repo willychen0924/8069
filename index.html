@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>8069 元太｜匯聚帶 v1</title>
+<style>
+:root{
+  --bg:#f0ebe0;
+  --surface:#fff;
+  --ink:#111a28;
+  --ink-2:#3b4a5e;
+  --ink-3:#7a8694;
+  --ink-4:#a5afb9;
+  --rule:#d6cdb5;
+  --line:#e8e0cc;
+  --line-soft:#f0ead8;
+
+  --now:#c07c10;
+  --now-bg:#fff6d6;
+
+  --c1:#c6395e; --c1b:#fdedf0; --c1w:#fdf5f7;
+  --c2:#2978c4; --c2b:#e4f0fb; --c2w:#f1f7fd;
+  --c3:#b96a15; --c3b:#fbeedc; --c3w:#fdf7ec;
+  --c4:#9e7a12; --c4b:#f9efc5; --c4w:#fcf7df;
+  --c5:#1d7a48; --c5b:#daf1e2; --c5w:#eaf5ee;
+  --c6:#0e7878; --c6b:#d2ecec; --c6w:#e6f3f3;
+  --c7:#6a3b8a; --c7b:#ebdef3; --c7w:#f2e8f7;
+  --c8:#8b4513; --c8b:#f5e6d3; --c8w:#faf2eb;
+
+  --shadow:0 1px 3px rgba(17,26,40,.06),0 6px 20px rgba(17,26,40,.05);
+  --r:10px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{
+  margin:0;padding:20px 16px 50px;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Noto Sans TC",sans-serif;
+  background:var(--bg);color:var(--ink);font-size:14px;line-height:1.55;
+}
+.w{max-width:980px;margin:0 auto}
+.m{font-variant-numeric:tabular-nums}
+
+.hd{background:var(--surface);border-radius:var(--r);box-shadow:var(--shadow);margin-bottom:12px;overflow:hidden;position:relative}
+.hd::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--c1) 0%,var(--c1) 12%,var(--c2) 12%,var(--c2) 25%,var(--c3) 25%,var(--c3) 37%,var(--c4) 37%,var(--c4) 50%,var(--c5) 50%,var(--c5) 62%,var(--c6) 62%,var(--c6) 75%,var(--c7) 75%,var(--c7) 87%,var(--c8) 87%)}
+.hd-top{display:flex;align-items:center;justify-content:space-between;padding:20px 24px 0;gap:20px;flex-wrap:wrap}
+.hd-id{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.hd-id h1{margin:0;font-size:38px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.hd-id h1 .code{color:var(--ink-2);margin-right:4px}
+.hd-id .pipe{color:var(--rule);font-weight:300;font-size:32px;margin:0 2px}
+.hd-id h2{margin:0;font-size:38px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.hd-price{text-align:right;display:flex;align-items:baseline;gap:14px}
+.hd-price .p{font-size:44px;font-weight:800;letter-spacing:-.04em;line-height:1}
+.hd-price .chg{font-size:12px;color:var(--c1);font-weight:700}
+.hd-price .chg span{color:var(--ink-3);font-weight:500;margin-left:4px}
+
+.hd-stats{display:flex;gap:0;margin:14px 24px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.hd-stats>div{flex:1;padding:8px 20px;border-right:1px dashed var(--line)}
+.hd-stats>div:first-child{padding-left:0}
+.hd-stats>div:last-child{border-right:none;padding-right:0}
+.hd-stats dt{font-size:10px;font-weight:700;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1px}
+.hd-stats dd{margin:0;font-size:16px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
+
+.kpis{display:flex;gap:8px;flex-wrap:wrap;padding:12px 24px 14px}
+.kp{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:8px;font-size:12.5px;font-weight:700;border:1px solid var(--line);background:var(--surface)}
+.kp .dot{width:8px;height:8px;border-radius:3px;flex-shrink:0}
+.kp .v{font-weight:800;color:var(--ink);font-size:14px;letter-spacing:-.01em}
+.kp .n{color:var(--ink-3);font-size:11px;font-weight:600}
+
+.upd,.scoring{background:var(--surface);border-radius:var(--r);box-shadow:0 1px 2px rgba(0,0,0,.04);margin-bottom:12px;border:1px solid var(--line);overflow:hidden}
+.upd-toggle,.scoring-toggle{display:flex;align-items:center;gap:10px;padding:10px 20px;cursor:pointer;-webkit-user-select:none;user-select:none;background:transparent;border:none;width:100%;font:inherit;color:var(--ink);text-align:left}
+.upd-toggle:hover,.scoring-toggle:hover{background:#faf7ee}
+.upd-toggle h3,.scoring-toggle h3{margin:0;font-size:13px;font-weight:800;flex:1;display:flex;align-items:center;gap:8px}
+.upd-toggle h3::before{content:"4/21";font-size:10px;font-weight:800;color:#fff;background:var(--c2);padding:2px 8px;border-radius:4px;letter-spacing:.04em}
+.upd-toggle .arr,.scoring-toggle .arr{font-size:14px;color:var(--ink-3);transition:transform .25s}
+.upd.open .upd-toggle .arr,.scoring.open .scoring-toggle .arr{transform:rotate(180deg)}
+.upd-body,.scoring-body{max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(.4,0,.2,1)}
+.upd.open .upd-body{max-height:800px}
+.scoring.open .scoring-body{max-height:500px}
+.upd-list{padding:0 20px 14px;margin:0;list-style:none;columns:2;column-gap:24px}
+.upd-list li{break-inside:avoid;font-size:13px;color:var(--ink-2);line-height:1.55;padding:3px 0 3px 18px;position:relative}
+.upd-list li::before{content:"";position:absolute;left:4px;top:10px;width:5px;height:5px;border-radius:50%;background:var(--c2);opacity:.5}
+.hl{font-weight:800;color:var(--ink);background:linear-gradient(180deg,transparent 60%,#ffe89b 60%);padding:0 2px}
+
+.scoring-inner{padding:0 20px 14px;font-size:12.5px;color:var(--ink-2);line-height:1.7}
+.scoring-inner table{width:100%;border-collapse:collapse;margin-top:6px}
+.scoring-inner th{text-align:left;font-size:10px;font-weight:800;color:var(--ink-3);letter-spacing:.06em;padding:4px 8px;border-bottom:1px solid var(--line)}
+.scoring-inner td{padding:4px 8px;font-size:12px;color:var(--ink-2);border-bottom:1px solid var(--line-soft)}
+.scoring-inner td:first-child{font-weight:700;color:var(--ink)}
+
+.zones{display:flex;flex-direction:column;gap:0}
+.zone{--zc:var(--ink);--zb:#f5f5f5;--zw:#fafafa;background:var(--surface);border:1px solid var(--line);border-bottom:none;display:grid;grid-template-columns:220px 1fr;min-height:0;position:relative;transition:box-shadow .2s}
+.zone:first-child{border-radius:var(--r) var(--r) 0 0}
+.zone:last-child{border-bottom:1px solid var(--line);border-radius:0 0 var(--r) var(--r)}
+.zone::before{content:"";position:absolute;top:0;bottom:0;left:0;width:4px;background:var(--zc);z-index:2}
+.zone:first-child::before{border-radius:var(--r) 0 0 0}
+.zone:last-child::before{border-radius:0 0 0 var(--r)}
+.zone:hover{box-shadow:0 2px 12px rgba(17,26,40,.08);z-index:2}
+
+.zone[data-c="1"]{--zc:var(--c1);--zb:var(--c1b);--zw:var(--c1w)}
+.zone[data-c="2"]{--zc:var(--c2);--zb:var(--c2b);--zw:var(--c2w)}
+.zone[data-c="3"]{--zc:var(--c3);--zb:var(--c3b);--zw:var(--c3w)}
+.zone[data-c="4"]{--zc:var(--c4);--zb:var(--c4b);--zw:var(--c4w)}
+.zone[data-c="5"]{--zc:var(--c5);--zb:var(--c5b);--zw:var(--c5w)}
+.zone[data-c="6"]{--zc:var(--c6);--zb:var(--c6b);--zw:var(--c6w)}
+.zone[data-c="7"]{--zc:var(--c7);--zb:var(--c7b);--zw:var(--c7w)}
+.zone[data-c="8"]{--zc:var(--c8);--zb:var(--c8b);--zw:var(--c8w)}
+
+.z-left{padding:14px 16px;background:var(--zw);border-right:1px solid var(--line-soft);display:flex;flex-direction:column;gap:5px}
+.z-left .price{font-size:28px;font-weight:800;color:var(--zc);letter-spacing:-.02em;line-height:1.05}
+.z-left .name{font-size:15px;font-weight:800;color:var(--ink);line-height:1.25}
+.z-left .meta{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:999px;font-size:10.5px;font-weight:800;background:var(--zb);color:var(--zc);border:1px solid color-mix(in srgb,var(--zc) 25%,transparent);white-space:nowrap}
+.badge::before{content:"●";font-size:7px;vertical-align:1px}
+.dist{font-size:11.5px;color:var(--ink-3);font-weight:600}
+.dist b{color:var(--ink-2);font-weight:700}
+
+.stars{font-size:13px;letter-spacing:1px;line-height:1;margin:1px 0}
+.stars .on{color:var(--zc)}
+.stars .off{color:var(--line)}
+.vol-bar{display:flex;align-items:center;gap:8px;margin-top:1px}
+.vol-track{flex:1;height:5px;background:var(--line);border-radius:3px;overflow:hidden;max-width:110px}
+.vol-fill{height:100%;border-radius:3px;background:var(--zc);opacity:.55}
+.vol-label{font-size:10px;color:var(--ink-3);font-weight:700;white-space:nowrap}
+
+.z-right{padding:12px 18px;display:flex;flex-direction:column;gap:8px}
+.z-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.z-cols h4{margin:0 0 4px;font-size:10px;font-weight:800;color:var(--zc);letter-spacing:.1em;text-transform:uppercase}
+.z-cols ul{margin:0;padding:0;list-style:none}
+.z-cols li{font-size:12.5px;color:var(--ink-2);line-height:1.5;padding:2px 0 2px 12px;position:relative}
+.z-cols li::before{content:"";position:absolute;left:2px;top:8px;width:4px;height:4px;border-radius:50%;background:var(--ink-4)}
+.z-cols li b,.z-cols li strong{color:var(--ink);font-weight:800}
+
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.chip{display:inline-flex;align-items:center;gap:4px;padding:3px 7px;border-radius:5px;background:var(--zw);border:1px solid color-mix(in srgb,var(--zc) 20%,transparent);font-size:11px;color:var(--ink-2);font-weight:600}
+.chip em{font-style:normal;font-size:9px;font-weight:800;color:var(--zc);letter-spacing:.03em}
+.chip b{color:var(--ink);font-weight:800}
+
+.verdict{padding:7px 12px;background:var(--zw);border-left:2px solid var(--zc);border-radius:0 4px 4px 0;font-size:12.5px;color:var(--ink-2);line-height:1.5}
+.verdict::before{content:"判讀 ";font-size:9px;font-weight:800;color:var(--zc);letter-spacing:.1em;margin-right:4px}
+.verdict b,.verdict strong{color:var(--ink);font-weight:800}
+
+.gap{background:#f4efe3;border:1px solid var(--line);border-bottom:none;padding:8px 18px 8px 24px;display:grid;grid-template-columns:220px 1fr;gap:0;font-size:12px;color:var(--ink-3);position:relative}
+.gap::before{content:"";position:absolute;top:0;bottom:0;left:0;width:4px;background:repeating-linear-gradient(180deg,var(--rule) 0,var(--rule) 4px,transparent 4px,transparent 8px)}
+.gap .g-range{font-weight:800;color:var(--ink-2);font-size:13px;padding-right:16px;display:flex;align-items:center}
+.gap .g-desc{padding:0 0 0 18px;border-left:1px dashed var(--rule);line-height:1.5}
+.gap .g-desc strong{color:var(--ink-2);font-weight:700}
+
+.now-row{background:linear-gradient(90deg,#e08b18,#d4790a);border:none;padding:9px 24px;display:flex;align-items:center;gap:14px;font-size:12px;color:#fff;font-weight:800;position:relative;z-index:3;box-shadow:0 2px 8px rgba(212,121,10,.3)}
+.now-row .arrow{font-size:16px;color:#fff}
+.now-row .label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.now-row .val{font-size:22px;letter-spacing:-.02em;color:#fff}
+.now-row .note{font-size:11px;color:rgba(255,255,255,.7);font-weight:600;margin-left:auto}
+
+.ft{margin-top:14px;padding:12px 20px;background:var(--line-soft);border-radius:var(--r);font-size:11px;color:var(--ink-3);text-align:center;line-height:1.6}
+.ft b{color:var(--ink-2)}
+
+@media(max-width:760px){
+  .hd-top{flex-direction:column;gap:8px;align-items:flex-start}
+  .hd-price{text-align:left}
+  .hd-id h1,.hd-id h2{font-size:30px}
+  .hd-id .pipe{font-size:26px}
+  .hd-price .p{font-size:36px}
+  .hd-stats{flex-wrap:wrap}
+  .hd-stats>div{flex:none;width:50%;padding:8px 14px}
+  .hd-stats>div:nth-child(2){border-right:none}
+  .hd-stats>div:nth-child(3){padding-left:0}
+  .kpis{gap:6px}
+  .kp{padding:5px 10px;font-size:12px}
+  .kp .v{font-size:13px}
+  .upd-list{columns:1}
+  .zone{grid-template-columns:1fr}
+  .z-left{border-right:none;border-bottom:1px solid var(--line-soft);flex-direction:row;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px}
+  .z-left .price{font-size:24px}
+  .z-left .name{font-size:14px}
+  .z-right{padding:12px 16px}
+  .z-cols{grid-template-columns:1fr}
+  .gap{grid-template-columns:1fr;gap:4px}
+  .gap .g-desc{border-left:none;padding-left:0}
+}
+@media(max-width:480px){
+  body{padding:14px 8px 30px}
+  .hd-id h1,.hd-id h2{font-size:24px}
+  .hd-id .pipe{font-size:20px}
+  .hd-price .p{font-size:30px}
+  .z-left .price{font-size:22px}
+}
+</style>
+</head>
+<body>
+<div class="w">
+
+<header class="hd">
+  <div class="hd-top">
+    <div class="hd-id">
+      <h1 class="m"><span class="code">8069</span> 元太</h1>
+      <span class="pipe">|</span>
+      <h2>匯聚帶分析</h2>
+    </div>
+    <div class="hd-price m">
+      <span class="p">154.0</span>
+      <span class="chg">↓ 52.2%<span>自歷史高 322</span></span>
+    </div>
+  </div>
+  <dl class="hd-stats m">
+    <div><dt>基準日</dt><dd>2026/04/21</dd></div>
+    <div><dt>收盤</dt><dd>154.0</dd></div>
+    <div><dt>波段低</dt><dd>136.0</dd></div>
+    <div><dt>歷史高</dt><dd>322.0</dd></div>
+  </dl>
+  <div class="kpis m">
+    <div class="kp"><span class="dot" style="background:var(--c1)"></span><span class="v">195–215</span><span class="n">★★★★ 已失守</span></div>
+    <div class="kp"><span class="dot" style="background:var(--c2)"></span><span class="v">178–195</span><span class="n">★★★★ 已失守</span></div>
+    <div class="kp"><span class="dot" style="background:var(--c3)"></span><span class="v">165–178</span><span class="n">★★★ 已失守</span></div>
+    <div class="kp"><span class="dot" style="background:var(--c4)"></span><span class="v">135–145</span><span class="n">★★★★★ 主滿足</span></div>
+    <div class="kp"><span class="dot" style="background:var(--c5)"></span><span class="v">125–135</span><span class="n">★★★★ 次級支撐</span></div>
+    <div class="kp"><span class="dot" style="background:var(--c6)"></span><span class="v">100–115</span><span class="n">★★ 量薄延伸</span></div>
+    <div class="kp"><span class="dot" style="background:var(--c7)"></span><span class="v">85–100</span><span class="n">★★★ 厚量歷史</span></div>
+    <div class="kp"><span class="dot" style="background:var(--c8)"></span><span class="v">65–85</span><span class="n">★★ 雙頭目標</span></div>
+  </div>
+</header>
+
+<!-- UPDATE -->
+<section class="upd open" id="upd">
+  <button class="upd-toggle" onclick="this.closest('.upd').classList.toggle('open')">
+    <h3>分析重點</h3>
+    <span class="arr">▾</span>
+  </button>
+  <div class="upd-body">
+    <ul class="upd-list">
+      <li>自 <span class="hl">322 歷史高</span>（2024/09/25）下跌至今 <span class="hl">52.2%</span>，波段低 136（2026/03/31），目前反彈到 154。</li>
+      <li>典型<span class="hl">雙頭型態</span>：頭 322（2024/9）＋ 肩 312（2025/3）＋ 頸線 196.5（2025/4 關稅低）。頸線跌破後量測目標 = <span class="hl">71 元</span>（雙頭滿足點）。</li>
+      <li>MA20（146.7）剛<span class="hl">方向上彎</span>，扣抵值 143.5→142.5，未來 1~2 週有機會延續上彎；但 MA60/120/240 均<span class="hl">方向下彎</span>，中長期空頭排列未破。</li>
+      <li>MA60 扣抵 175.5→179.5（持續下彎）、MA120 扣抵 217→212（強力下彎）、MA240 扣抵 238→214（強力下彎）。</li>
+      <li>近一年外資賣超 <span class="hl">-80,893 張</span>（近 30 日 -26,817），持股 37.0%；融資餘額 <span class="hl">9,493 張</span>不高（已去化）。</li>
+      <li>2025 全年 EPS <span class="hl">9.14 元</span>（年增 96%，歷史新高），但 Q4 單季 EPS 0.97 元（季減 73.6%、年減 68.5%）急凍。</li>
+      <li>2025/Q4~2026/Q1 為<span class="hl">客戶去庫存</span>週期 + ESL 安裝淡季，2026/3 月營收 32.50 億（月增 24.8%、年增 1.3%），Q1 累計年增 7.1% — 季節性止血中但動能放緩。</li>
+      <li>2026 年度盈餘分配案已於 3/6 董事會通過，以近 5 年配息率推估配息約 <span class="hl">5.0 元</span>，現價殖利率約 3.2%。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SCORING LEGEND -->
+<section class="scoring" id="scoring">
+  <button class="scoring-toggle" onclick="this.closest('.scoring').classList.toggle('open')">
+    <h3>星級評定方法</h3>
+    <span class="arr">▾</span>
+  </button>
+  <div class="scoring-body">
+    <div class="scoring-inner">
+      <table>
+        <tr><th>星級</th><th>條件</th><th>範例</th></tr>
+        <tr><td>★★★★★</td><td>5＋ 獨立方法匯聚窄區間（≦10 元）＋ 波段低加持 ＋ 整數關卡</td><td>135~145</td></tr>
+        <tr><td>★★★★</td><td>4＋ 方法匯聚，量能中等或伴隨歷史關鍵低點</td><td>178~195、125~135</td></tr>
+        <tr><td>★★★</td><td>3~4 方法 ＋ 量能厚度偏高，或已失守性質轉壓力</td><td>165~178、85~100</td></tr>
+        <tr><td>★★</td><td>2~3 方法 ＋ 量能極薄或為雙頭量測極端情境</td><td>100~115、65~85</td></tr>
+        <tr><td>★</td><td>多方法但屬尾部極端崩跌情境，非主線</td><td>50~65</td></tr>
+      </table>
+      <p style="margin:8px 0 0;font-size:11px;color:var(--ink-3)">
+        技術方法：Fibonacci 回撤（線性＋對數）、N 波等幅/倍幅、雙頭型態量測、歷史量密集區、超長週期 Fib、長期均線扣抵。<br>
+        波段定義：A=2022/11 低 155.5→2024/9 高 322；B=2023/10 低 165.5→2024/9 高 322；最長 L=2020/3 疫情低 20.6→2024/9 高 322；超長 S=2008/11 海嘯低 10.85→2024/9 高 322。<br>
+        成交量：原始數據觸及法（日線高低觸及帶區即計入全日成交量，全歷史累計）。量能條以 3,199K（65~80 帶區，為支撐帶中最厚）為 100% 基準，超過 100% 顯示為滿條。<br>
+        殖利率：以預估 2026 配息 5.0 元計算（2025 EPS 9.14 × 歷史配息率 ~55%）。已失守帶區：星級凍結，性質轉為反彈壓力。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═════ ZONE LIST ═════ -->
+<div class="zones">
+
+  <!-- ① 195–215 ★★★★ 已失守 (最重套牢 + 雙頭頸線) -->
+  <div class="zone" data-c="1">
+    <div class="z-left">
+      <div class="price m">195 – 215</div>
+      <div class="name">雙頭頸線 + 主套牢帶</div>
+      <div class="stars"><span class="on">★★★★</span><span class="off">☆</span></div>
+      <div class="meta">
+        <span class="badge">已失守</span>
+        <span class="dist m">距現價 <b>+26.6% ~ +39.6%</b></span>
+      </div>
+      <div class="vol-bar">
+        <div class="vol-track"><div class="vol-fill" style="width:100%"></div></div>
+        <span class="vol-label">5,651K 極厚</span>
+      </div>
+    </div>
+    <div class="z-right">
+      <div class="z-cols">
+        <div>
+          <h4>技術來源（5 方法）</h4>
+          <div class="chips">
+            <span class="chip"><em>雙頭頸線</em><b>196.5</b></span>
+            <span class="chip"><em>B線Fib0.786</em><b>198.99</b></span>
+            <span class="chip"><em>2026/1 高</em><b>201.5</b></span>
+            <span class="chip"><em>C對Fib0.786</em><b>215.65</b></span>
+            <span class="chip"><em>2025/4 關稅低</em><b>196.5</b></span>
+          </div>
+          <ul style="margin-top:5px">
+            <li>殖利率 <b>2.3~2.6%</b>（偏低）</li>
+            <li>PE @ 2025 EPS 9.14 = <b>21.3~23.5x</b></li>
+          </ul>
+        </div>
+        <div>
+          <h4>量能解讀</h4>
+          <ul>
+            <li>歷史成交量 <b>5,651K</b>（全表最厚壓力帶）</li>
+            <li>近一年套牢量 <b>807K</b>，占近一年總量 <b>27%</b></li>
+            <li>2025/4 頸線跌破後、2026/1 反彈高 201.5 再跌破 = <b>二次確認空方型態</b></li>
+            <li>MA240（203.49）在此區，為長期空頭壓制</li>
+          </ul>
+        </div>
+      </div>
+      <div class="verdict">5 方法匯聚 + 極厚量 + 雙頭頸線 → <b>★★★★（已失守）</b>。這是元太從 2024/9 見頂後最難克服的反彈壓力。站回 215 + 放量才算<b>初步修復雙頭型態</b>，否則 2026/1 下跌結構仍未改。</div>
+    </div>
+  </div>
+
+  <!-- ② 178–195 ★★★★ 已失守 (Fib 0.786 共振) -->
+  <div class="zone" data-c="2">
+    <div class="z-left">
+      <div class="price m">178 – 195</div>
+      <div class="name">Fib 0.786/0.886 共振帶</div>
+      <div class="stars"><span class="on">★★★★</span><span class="off">☆</span></div>
+      <div class="meta">
+        <span class="badge">已失守</span>
+        <span class="dist m">距現價 <b>+15.6% ~ +26.6%</b></span>
+      </div>
+      <div class="vol-bar">
+        <div class="vol-track"><div class="vol-fill" style="width:100%"></div></div>
+        <span class="vol-label">4,224K 極厚</span>
+      </div>
+    </div>
+    <div class="z-right">
+      <div class="z-cols">
+        <div>
+          <h4>技術來源（5 方法共振）</h4>
+          <div class="chips">
+            <span class="chip"><em>B對Fib0.886</em><b>178.55</b></span>
+            <span class="chip"><em>2024/1 低</em><b>180</b></span>
+            <span class="chip"><em>A對Fib0.786</em><b>181.71</b></span>
+            <span class="chip"><em>B線Fib0.886</em><b>183.34</b></span>
+            <span class="chip"><em>B對Fib0.786</em><b>190.83</b></span>
+            <span class="chip"><em>A線Fib0.786</em><b>191.13</b></span>
+          </div>
+        </div>
+        <div>
+          <h4>量能解讀</h4>
+          <ul>
+            <li>歷史成交量 <b>4,224K</b>（極厚）</li>
+            <li>近一年套牢量 <b>369K</b></li>
+            <li><b>Fib 0.786</b> — 線性+對數雙重確認，兩波段交叉</li>
+            <li>MA120（177.63）在此區下緣，長期空頭助跌</li>
+            <li>殖利率 <b>2.6~2.8%</b></li>
+          </ul>
+        </div>
+      </div>
+      <div class="verdict">5 方法密集匯聚於 17 元區間 + 極厚量 → <b>★★★★（已失守）</b>。Fib 0.786 為空頭「深度回跌」的經典關卡，此帶 + 185 元附近的 MA120 構成反彈的<b>中線最強壓力</b>。突破需放大量 + 站穩 195。</div>
+    </div>
+  </div>
+
+  <!-- ③ 165–178 ★★★ 已失守 (Fib 0.886 + MA60) -->
+  <div class="zone" data-c="3">
+    <div class="z-left">
+      <div class="price m">165 – 178</div>
+      <div class="name">Fib 0.886 + MA60 壓制</div>
+      <div class="stars"><span class="on">★★★</span><span class="off">☆☆</span></div>
+      <div class="meta">
+        <span class="badge">已失守</span>
+        <span class="dist m">距現價 <b>+7.1% ~ +15.6%</b></span>
+      </div>
+      <div class="vol-bar">
+        <div class="vol-track"><div class="vol-fill" style="width:100%"></div></div>
+        <span class="vol-label">3,505K 厚</span>
+      </div>
+    </div>
+    <div class="z-right">
+      <div class="z-cols">
+        <div>
+          <h4>技術來源（6 方法）</h4>
+          <div class="chips">
+            <span class="chip"><em>2023/10 低</em><b>165.5</b></span>
+            <span class="chip"><em>2025/11 低</em><b>167.5</b></span>
+            <span class="chip"><em>A對Fib0.886</em><b>168.95</b></span>
+            <span class="chip"><em>C波1.272倍</em><b>172.16</b></span>
+            <span class="chip"><em>A線Fib0.886</em><b>174.48</b></span>
+            <span class="chip"><em>MA60（下彎）</em><b>162.8</b></span>
+          </div>
+        </div>
+        <div>
+          <h4>量能解讀</h4>
+          <ul>
+            <li>歷史成交量 <b>3,505K</b>（全表前五厚）</li>
+            <li>近一年套牢 <b>180K</b></li>
+            <li>2023/10 與 2025/11 兩個波段低在此匯聚 = <b>雙重失守</b></li>
+            <li>MA60（162.8）方向下彎，扣抵值 175.5 持續下彎至少 2 週</li>
+            <li>殖利率 <b>2.8~3.0%</b></li>
+          </ul>
+        </div>
+      </div>
+      <div class="verdict">6 方法 + 厚量 → <b>★★★（已失守）</b>。現階段最近的反彈壓力帶。MA60 下彎壓制 + Fib 0.886 技術防線雙重封頂，<b>短線反彈 165 附近極可能遇壓回落</b>。站回 178 才算跨越第一道空頭關卡。</div>
+    </div>
+  </div>
+
+  <div class="gap">
+    <div class="g-range m">155 – 165</div>
+    <div class="g-desc"><strong>MA60 過渡帶</strong>｜2022/11 低 155.5、2021/12 高 153、MA60 162.8 集中此區。歷史量 1,404K。近期反彈首要測試區，站穩才能挑戰 ③ 帶壓力。</div>
+  </div>
+
+  <!-- 現價 -->
+  <div class="now-row m">
+    <span class="arrow">▸</span>
+    <span class="label">現價</span>
+    <span class="val">154.0</span>
+    <span class="note">收盤 2026/04/21 ｜ 波段低 136.0（3/31）｜ MA5=154.5, MA10=150.6, MA20=146.7</span>
+  </div>
+
+  <div class="gap">
+    <div class="g-range m">145 – 154</div>
+    <div class="g-desc"><strong>短期反彈測試區</strong>｜MA20（146.7）剛方向上彎 + 近3月主要套牢點（189K）。若 MA20 失守且放量跌破 145，代表短期反彈失敗，重新測試 ④ 帶區。</div>
+  </div>
+
+  <!-- ④ 135–145 ★★★★★ 第一主要支撐 -->
+  <div class="zone" data-c="4">
+    <div class="z-left">
+      <div class="price m">135 – 145</div>
+      <div class="name">第一主要支撐帶 ⭐</div>
+      <div class="stars"><span class="on">★★★★★</span></div>
+      <div class="meta">
+        <span class="badge">最強</span>
+        <span class="dist m">距現價 <b>-12.3% ~ -5.8%</b></span>
+      </div>
+      <div class="vol-bar">
+        <div class="vol-track"><div class="vol-fill" style="width:33%"></div></div>
+        <span class="vol-label">1,050K 中</span>
+      </div>
+    </div>
+    <div class="z-right">
+      <div class="z-cols">
+        <div>
+          <h4>技術來源（6 方法密集匯聚）</h4>
+          <div class="chips">
+            <span class="chip"><em>最長線Fib0.618</em><b>135.73</b></span>
+            <span class="chip"><em>波段低（3/31）</em><b>136.0</b></span>
+            <span class="chip"><em>整數 140</em><b>140</b></span>
+            <span class="chip"><em>C波1.618倍延伸</em><b>141.19</b></span>
+            <span class="chip"><em>超長對Fib0.236</em><b>144.66</b></span>
+            <span class="chip"><em>中N波A2接近</em><b>~150</b></span>
+          </div>
+        </div>
+        <div>
+          <h4>量能解讀（三維度均衡）</h4>
+          <ul>
+            <li><b>技術</b>：6 方法匯聚於 10 元窄區，包括<b>最長波段 Fib 0.618 黃金分割</b></li>
+            <li><b>波段低 136（3/31, 4/2 兩次測試）</b>= 市場心理防線</li>
+            <li><b>量能</b>：歷史量 1,050K 中偏薄，但近 3 月套牢量 97K 已形成短期籌碼</li>
+            <li><b>殖利率</b>：<b>3.4~3.7%</b>（以配息 5 元計）</li>
+            <li><b>估值</b>：PE @ 2025 EPS 9.14 = <b>14.8~15.9x</b>（歷史偏低）</li>
+          </ul>
+        </div>
+      </div>
+      <div class="verdict">6 方法匯聚 × 波段低 × 最長波 Fib 0.618 × 整數 140 ＝ <b>★★★★★ 核心支撐</b>。這是跌破後若二次測試最可能的止跌位。若在此形成<b>日線 W 底 + 量能放大</b>，可初步確認波段底。跌破 135 → 轉入五波修正，下看 ⑤ 帶 125~135。</div>
+    </div>
+  </div>
+
+  <!-- ⑤ 125–135 ★★★★ 次級支撐 -->
+  <div class="zone" data-c="5">
+    <div class="z-left">
+      <div class="price m">125 – 135</div>
+      <div class="name">2022/3 低 + N 波延伸</div>
+      <div class="stars"><span class="on">★★★★</span><span class="off">☆</span></div>
+      <div class="meta">
+        <span class="badge">次級支撐</span>
+        <span class="dist m">距現價 <b>-18.8% ~ -12.3%</b></span>
+      </div>
+      <div class="vol-bar">
+        <div class="vol-track"><div class="vol-fill" style="width:19%"></div></div>
+        <span class="vol-label">610K 中</span>
+      </div>
+    </div>
+    <div class="z-right">
+      <div class="z-cols">
+        <div>
+          <h4>技術來源（4 方法）</h4>
+          <div class="chips">
+            <span class="chip"><em>C波1.272倍延伸</em><b>126.36</b></span>
+            <span class="chip"><em>大N波C=1.272A</em><b>126.36</b></span>
+            <span class="chip"><em>2022/3 低</em><b>126.5</b></span>
+            <span class="chip"><em>整數 130</em><b>130</b></span>
+          </div>
+        </div>
+        <div>
+          <h4>量能解讀</h4>
+          <ul>
+            <li>歷史成交量 <b>610K</b>（中等）</li>
+            <li><b>2022/3 波段低 126.5</b> — 過去兩年半最堅強的結構性低點</li>
+            <li>大 N 波與 C 波延伸雙重在 126 匯聚</li>
+            <li>殖利率 <b>3.7~4.0%</b></li>
+            <li>PE @ 2025 EPS 9.14 = <b>13.7~14.8x</b></li>
+          </ul>
+        </div>
+      </div>
+      <div class="verdict">4 方法匯聚 + 2022/3 歷史波段低 → <b>★★★★</b>。若 ④ 135-145 失守，此帶為最重要的下一道防線。跌至 126.5 = 過去 2.5 年漲幅幾乎全吐，基本面若仍健在，此處具<b>逆勢反彈價值</b>。</div>
+    </div>
+  </div>
+
+  <div class="gap">
+    <div class="g-range m">115 – 125</div>
+    <div class="g-desc"><strong>量薄過渡帶</strong>｜雙頭量測 0.618 延伸（118.94）＋ 整數 120 心理關卡。歷史量僅 489K（薄），失守後容易快速滑落。</div>
+  </div>
+
+  <!-- ⑥ 100–115 ★★ 延伸 (量薄) -->
+  <div class="zone" data-c="6">
+    <div class="z-left">
+      <div class="price m">100 – 115</div>
+      <div class="name">量薄延伸區</div>
+      <div class="stars"><span class="on">★★</span><span class="off">☆☆☆</span></div>
+      <div class="meta">
+        <span class="badge">量薄</span>
+        <span class="dist m">距現價 <b>-35.1% ~ -25.3%</b></span>
+      </div>
+      <div class="vol-bar">
+        <div class="vol-track"><div class="vol-fill" style="width:10%"></div></div>
+        <span class="vol-label">316K 極薄</span>
+      </div>
+    </div>
+    <div class="z-right">
+      <div class="z-cols">
+        <div>
+          <h4>技術來源（2 方法）</h4>
+          <div class="chips">
+            <span class="chip"><em>最長對Fib0.382</em><b>112.66</b></span>
+            <span class="chip"><em>整數 100 心理關卡</em><b>100</b></span>
+          </div>
+          <ul style="margin-top:5px">
+            <li>殖利率 <b>4.3~5.0%</b></li>
+            <li>PE @ 2025 EPS 9.14 = <b>10.9~12.6x</b></li>
+          </ul>
+        </div>
+        <div>
+          <h4>量能解讀</h4>
+          <ul>
+            <li>歷史成交量僅 <b>316K</b>（全表最薄）</li>
+            <li>此段為 2021 漲勢中<b>急漲過的薄板區</b>，未久留</li>
+            <li>缺少籌碼換手基礎，失守不會久留</li>
+            <li>若跌至此，通常為<b>恐慌情緒主導</b>，快速下殺</li>
+          </ul>
+        </div>
+      </div>
+      <div class="verdict">2 方法 + 極薄量 → <b>★★</b>。量薄帶的特性是<b>失守後快速滑落</b>，不具備有效承接能力。整數 100 元心理關卡若失守 → 直落 ⑦ 帶 85-100。</div>
+    </div>
+  </div>
+
+  <!-- ⑦ 85–100 ★★★ 厚量歷史支撐 -->
+  <div class="zone" data-c="7">
+    <div class="z-left">
+      <div class="price m">85 – 100</div>
+      <div class="name">厚量歷史整理區</div>
+      <div class="stars"><span class="on">★★★</span><span class="off">☆☆</span></div>
+      <div class="meta">
+        <span class="badge">厚量</span>
+        <span class="dist m">距現價 <b>-44.8% ~ -35.1%</b></span>
+      </div>
+      <div class="vol-bar">
+        <div class="vol-track"><div class="vol-fill" style="width:33%"></div></div>
+        <span class="vol-label">1,054K 中</span>
+      </div>
+    </div>
+    <div class="z-right">
+      <div class="z-cols">
+        <div>
+          <h4>技術來源（3 方法）</h4>
+          <div class="chips">
+            <span class="chip"><em>超長對Fib0.382</em><b>88.18</b></span>
+            <span class="chip"><em>最長對Fib0.5</em><b>81.44</b></span>
+            <span class="chip"><em>2021 Q3-Q4 整理區</em><b>85~95</b></span>
+          </div>
+        </div>
+        <div>
+          <h4>量能解讀</h4>
+          <ul>
+            <li>歷史成交量 <b>1,054K</b>（含 80-95 帶為 1,780K）</li>
+            <li>2021 下半年的整理區，是從 20.6 啟漲到 322 的<b>中繼平台</b></li>
+            <li>殖利率 <b>5.0~5.9%</b>（接近存股吸引力）</li>
+            <li>PE @ 2025 EPS 9.14 = <b>9.3~10.9x</b>（歷史極低）</li>
+            <li>意味：長達 5 年漲幅幾乎回吐</li>
+          </ul>
+        </div>
+      </div>
+      <div class="verdict">3 方法 + 中厚量 + 歷史平台 → <b>★★★</b>。系統性崩跌 + 2026 EPS 若下修至 6-7 元以下才會觸及。此帶為<b>長線存股的第一個吸引力區域</b>（殖利率 5%+、PE 10x 以下），但屬深度修正情境。</div>
+    </div>
+  </div>
+
+  <!-- ⑧ 65–85 ★★ 雙頭量測 + 極端 -->
+  <div class="zone" data-c="8">
+    <div class="z-left">
+      <div class="price m">65 – 85</div>
+      <div class="name">雙頭量測目標（極端）</div>
+      <div class="stars"><span class="on">★★</span><span class="off">☆☆☆</span></div>
+      <div class="meta">
+        <span class="badge">極端情境</span>
+        <span class="dist m">距現價 <b>-57.8% ~ -44.8%</b></span>
+      </div>
+      <div class="vol-bar">
+        <div class="vol-track"><div class="vol-fill" style="width:100%"></div></div>
+        <span class="vol-label">3,330K 厚</span>
+      </div>
+    </div>
+    <div class="z-right">
+      <div class="z-cols">
+        <div>
+          <h4>技術來源（4 方法）</h4>
+          <div class="chips">
+            <span class="chip"><em>雙頭量測目標</em><b>71.0</b></span>
+            <span class="chip"><em>超長線Fib0.786</em><b>77.44</b></span>
+            <span class="chip"><em>大N波1.618延伸</em><b>82.94</b></span>
+            <span class="chip"><em>最長線Fib0.786</em><b>85.10</b></span>
+          </div>
+        </div>
+        <div>
+          <h4>量能解讀</h4>
+          <ul>
+            <li>歷史成交量 <b>3,330K</b>（厚）</li>
+            <li><b>雙頭量測 71 元</b> = 322 頭距 196.5 頸線的等幅下跌目標</li>
+            <li>殖利率 <b>5.9~7.7%</b>（歷史高位）</li>
+            <li>PE @ 2025 EPS 9.14 = <b>7.1~9.3x</b>（極低）</li>
+            <li>回到 2020 疫情後第一波上升中段</li>
+          </ul>
+        </div>
+      </div>
+      <div class="verdict">4 方法 + 厚量 + 雙頭量測目標 → <b>★★</b>（極端情境）。需要<b>全球衰退 + 電子紙產業重大利空 + 獲利腰斬</b>三重打擊才會觸及。非主劇本，但雙頭型態理論目標值得保留觀察。</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- MA deduction -->
+<section class="scoring" id="ma-info" style="margin-top:12px">
+  <button class="scoring-toggle" onclick="this.closest('.scoring').classList.toggle('open')">
+    <h3>均線扣抵與方向預判</h3>
+    <span class="arr">▾</span>
+  </button>
+  <div class="scoring-body">
+    <div class="scoring-inner">
+      <table>
+        <tr><th>均線</th><th>目前位置</th><th>方向</th><th>扣抵值</th><th>未來走向</th></tr>
+        <tr><td>MA20</td><td>146.70</td><td>↑上彎</td><td>143.5 (3/23)</td><td>扣抵值 143.5→142.5，若股價守 150+ 將延續上彎 1~2 週</td></tr>
+        <tr><td>MA60</td><td>162.80</td><td>↓下彎</td><td>175.5 (1/14)</td><td>扣抵值 175.5→179.5（未來扣抵更高），持續下彎至少 2 週</td></tr>
+        <tr><td>MA120</td><td>177.63</td><td>↓下彎</td><td>217.0 (10/17)</td><td>扣抵值 217→212，強力下彎至少 2 個月（Q4 高檔區慢慢扣出）</td></tr>
+        <tr><td>MA240</td><td>203.49</td><td>↓下彎</td><td>238.0 (2025/4/25)</td><td>扣抵值 238→214，強力下彎（2025 上半年高檔持續扣出）</td></tr>
+      </table>
+      <p style="margin:8px 0 0;font-size:11px;color:var(--ink-3)">
+        <b>關鍵觀察</b>：MA20 剛上彎 ≠ 止跌訊號，只代表短期反彈成立。真正關鍵是<b>中長期均線何時轉向</b>。
+        MA60 要翻揚需股價站上 180 持續；MA120 扣抵要到 2025/10 的高點全部走完（約 2~3 個月後），才有機會走平。
+        MA240 下彎至少會延續到 2025/10 後半的高點扣出，<b>長期空頭排列結構無法短期改變</b>。<br>
+        <b>止跌條件層級</b>：<br>
+        ① 短期（1-2 週）：守 MA20（146.7）+ MA5/MA10 金叉 → 反彈延續<br>
+        ② 中期（1-2 月）：站回 165-178（MA60 壓力帶）且 MA60 走平 → 空頭趨勢動搖<br>
+        ③ 長期（3-6 月）：站回 195-215（頸線 + MA240）+ 放量突破 → 雙頭型態修復<br>
+        目前處於 ① 階段的初期測試，中長期趨勢<b>尚未轉向</b>。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 基本面補充 -->
+<section class="scoring" id="fund-info" style="margin-top:12px">
+  <button class="scoring-toggle" onclick="this.closest('.scoring').classList.toggle('open')">
+    <h3>基本面 × 產業週期補充</h3>
+    <span class="arr">▾</span>
+  </button>
+  <div class="scoring-body">
+    <div class="scoring-inner">
+      <table>
+        <tr><th>面向</th><th>現況</th><th>方向</th></tr>
+        <tr><td>2025 全年 EPS</td><td>9.14 元（年增 96%，歷史新高）</td><td>✅ 正面</td></tr>
+        <tr><td>2025 Q4 單季 EPS</td><td>0.97 元（季減 73.6%、年減 68.5%）</td><td>❌ 急凍</td></tr>
+        <tr><td>2026 Q1 營收</td><td>累計 86.33 億，年增 7.12%</td><td>⚠️ 動能放緩</td></tr>
+        <tr><td>2026/3 月營收</td><td>32.50 億（月增 24.8%、年增 1.3%）</td><td>⚠️ 止血中</td></tr>
+        <tr><td>毛利率</td><td>Q2 55.8% → Q4 48.3%（跳水 7.5pp）</td><td>❌ 短期惡化</td></tr>
+        <tr><td>客戶週期</td><td>25Q4~26Q1 去庫存 + ESL 安裝淡季</td><td>⚠️ 被動去庫存</td></tr>
+        <tr><td>長期結構</td><td>ESL（Walmart 4,600 店）+ 彩色閱讀器 + 數位看板，全球 &gt;90% 市佔</td><td>✅ 護城河完整</td></tr>
+        <tr><td>法人預估 2026 EPS</td><td>2025/8 時上修至 12.25 元，Q4 後需下修（估 8-10 元合理）</td><td>⚠️ 預期修正</td></tr>
+      </table>
+      <p style="margin:8px 0 0;font-size:11px;color:var(--ink-3)">
+        <b>週期定位</b>：目前處於「<b>主動去庫存末期 ~ 被動去庫存初期</b>」。Q2 客戶提前拉貨 → Q4 急凍 → Q1 營收低基期止血。
+        歷史上去庫存週期約 2~3 季，若 2026 Q2 能看到客戶拉貨回溫，則 ④⑤ 帶（125-145）可能就是本波底部區間。<br>
+        <b>配息預估</b>：2025 EPS 9.14 元，近年配息率約 50-65%，預估 2026 配息 <b>4.5 ~ 6.0 元</b>（中位 5.0 元）。以現價 154 殖利率 3.2%、以 135 殖利率 3.7%。<br>
+        <b>估值錨點</b>：以 2026E EPS 8.5 元（保守）計算 — PE 15x = 127.5 元、PE 18x = 153 元、PE 22x = 187 元、PE 28x = 238 元。目前 PE 18x 附近，相對<b>合理偏低</b>。
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <b>8069 元太 匯聚帶 v1</b>｜基準日 2026/04/21｜原始日線 + 還原權值 CSV 交叉驗證（數據自 2004/03/30 ~ 2026/04/21 共 5,428 筆）<br>
+  星級 = 技術方法數 × 成交量厚度 × 殖利率 × 區間窄度。量能條以 3,199K（65~80 帶區，支撐帶最厚）為 100% 基準。<br>
+  <b>主劇本</b>（60%）：短線在 MA20（146.7）之上整理 → 反彈到 ③ 帶（165-178）遇壓 → 中期若 MA60 下彎結束，盤整 135-178 箱型。<br>
+  <b>空方劇本</b>（25%）：MA20 失守 + 破 136 → 測試 ④ 帶下緣（135-140），再失守則滑向 ⑤ 帶（125-135，2022/3 歷史低）。<br>
+  <b>極端劇本</b>（15%）：外資持續大賣 + 基本面利空擴散 → 跌破 125 → 量薄區直達 ⑦ 帶（85-100），殖利率 5%+ 長線吸引力浮現。<br>
+  <b>均線環境</b>：MA20 上彎（短期反彈中），MA60/120/240 下彎助跌（中長期空頭排列）。<br>
+  本文件僅供分析參考，不構成投資建議。投資有風險，決策請自行判斷。
+</footer>
+
+</div>
+</body>
+</html>
